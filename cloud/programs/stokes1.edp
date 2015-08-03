@@ -1,0 +1,69 @@
+// Optical flow problem using FEM
+// Author: Praveen. C <http://math.tifrbng.res.in/~praveen>
+// Unit square
+border aa(t=0,1){x=t;   y=0;}
+border bb(t=0,1){x=1;   y=t;}
+border cc(t=0,1){x=1-t; y=1;}
+border dd(t=0,1){x=0;   y=1-t;}
+
+int np = 20;
+mesh Th = buildmesh( aa(np) + bb(np) + cc(np) + dd(np) );
+plot(Th, wait=1);
+
+// Exact velocity
+func ue = y;
+func ve = -x;
+real t  = 0;
+// Image and its derivatives
+real coef = 50;
+real xc = 0.5, yc = 0.5;
+func E = exp(-coef*((x-xc)^2 + (y-yc)^2));
+func Ex= -2*coef*(x-xc)*E;
+func Ey= -2*coef*(y-yc)*E;
+func Et= -(Ex*ue+Ey*ve);
+
+fespace Vh(Th,P1);
+fespace Wh(Th,P1);
+
+// Just for visualization
+Vh Eh=E;
+plot(Eh, wait=1);
+
+// Solution
+Vh u, v;
+// Test function
+Vh uh, vh;
+// Lagrange Multiplier
+Wh lambda, lambdah;
+// Regularization parameter
+real alpha=0.1;
+
+// Weak formulation of the problem
+problem OpticalFlow([u,v,lambda],[uh,vh,lambdah],solver=LU) =
+int2d(Th)( alpha^2 * (dx(u)*dx(uh) + dy(u)*dy(uh) +
+                      dx(v)*dx(vh) + dy(v)*dy(vh) )) -
+int2d(Th)( (u*Ex + v*Ey)*(uh*Ex + vh*Ey) ) -
+int2d(Th)( Et*(uh*Ex + vh*Ey) )-
+int2d(Th)((dx(uh)+dy(vh))*lambda)-
+int2d(Th)((dx(u)+dy(v))*lambdah)-
+int2d(Th)(1e-10*lambda*lambdah)+
+on(1, u=ue, v=ve);
+
+// solve the problem
+OpticalFlow;
+
+// Compute L2 error in velocity
+real err = int2d(Th)( (u-ue)^2 + (v-ve)^2 );
+err = sqrt(err);
+cout << "L2 error in velocity = " << err << endl;
+
+// Plot velocity
+plot(Eh,[u,v],wait=1,cmm="Velocity vectors",ps="vel.eps");
+
+Vh uerror = u - ue;
+Vh verror = v - ve;
+plot(uerror,wait=1,value=1,fill=1,cmm="Error in u");
+plot(verror,wait=1,value=1,fill=1,cmm="Error in v");
+
+Vh aerror = Et + u*Ex + v*Ey;
+plot(aerror,wait=1,value=1,fill=1,cmm="Error in advection");

@@ -1,0 +1,1055 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fc4ba2bfbdb, pid=29135, tid=140485277800192
+#
+# JRE version: 6.0_20-b02
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (16.3-b01 mixed mode linux-amd64 )
+# Problematic frame:
+# C  [libgtk-x11-2.0.so.0+0x257bdb]  gtk_widget_realize+0x1b
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000006d4000):  JavaThread "main" [_thread_in_native, id=29135, stack(0x00007fff8c5f3000,0x00007fff8c7f3000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x0000000000000018
+
+Registers:
+RAX=0x0000000000885280, RBX=0x0000000000875990, RCX=0x0000000000003d29, RDX=0x0000000000875990
+RSP=0x00007fff8c7f0030, RBP=0x0000000000000018, RSI=0x00007fff8c7f00c0, RDI=0x0000000000875990
+R8 =0x0000000000000000, R9 =0x00007fc4f4bd78d0, R10=0x00007fc541b5bc1b, R11=0x00007fc546332220
+R12=0x00007fc4f5a2e1a0, R13=0x00007fc4f4938a10, R14=0x00007fff8c7f00d8, R15=0x00000000006d4000
+RIP=0x00007fc4ba2bfbdb, EFL=0x0000000000010206, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fff8c7f0030)
+0x00007fff8c7f0030:   00007fff8c7f0070 00007fc4f4938a10
+0x00007fff8c7f0040:   00007fff8c7f00b0 00007fc47b152f75
+0x00007fff8c7f0050:   0000000000000005 00007fc541b5bc48
+0x00007fff8c7f0060:   00007fc5465f9b70 00000000006d4000
+0x00007fff8c7f0070:   00007fff8c7f0070 0000000000000000
+0x00007fff8c7f0080:   00007fff8c7f00d8 00007fc4f4954190
+0x00007fff8c7f0090:   0000000000000000 00007fc4f4938a10
+0x00007fff8c7f00a0:   0000000000000000 00007fff8c7f00d0
+0x00007fff8c7f00b0:   00007fff8c7f0120 00007fc541b50a42
+0x00007fff8c7f00c0:   00007fc4f4953f48 00007fc541b58f18
+0x00007fff8c7f00d0:   0000000000875990 0000000000000001
+0x00007fff8c7f00e0:   00007fff8c7f00e0 00007fc4f4938b10
+0x00007fff8c7f00f0:   00007fff8c7f0140 00007fc4f4954190
+0x00007fff8c7f0100:   0000000000000000 00007fc4f4938b48
+0x00007fff8c7f0110:   00007fff8c7f00d0 00007fff8c7f0138
+0x00007fff8c7f0120:   00007fff8c7f0188 00007fc541b50a42
+0x00007fff8c7f0130:   0000000000000000 0000000000875990
+0x00007fff8c7f0140:   00007fc503611978 00007fff8c7f0148
+0x00007fff8c7f0150:   00007fc4f40b646e 00007fff8c7f01a8
+0x00007fff8c7f0160:   00007fc4f4aec1e0 0000000000000000
+0x00007fff8c7f0170:   00007fc4f40b6498 00007fff8c7f0138
+0x00007fff8c7f0180:   00007fff8c7f01a8 00007fff8c7f01f0
+0x00007fff8c7f0190:   00007fc541b50973 0000000000875990
+0x00007fff8c7f01a0:   0000000000000000 00007fc503611978
+0x00007fff8c7f01b0:   00007fff8c7f01b0 00007fc4f40c5091
+0x00007fff8c7f01c0:   00007fff8c7f0230 00007fc4f4aec1e0
+0x00007fff8c7f01d0:   0000000000000000 00007fc4f40c50f8
+0x00007fff8c7f01e0:   00007fff8c7f01a8 00007fff8c7f0220
+0x00007fff8c7f01f0:   00007fff8c7f0278 00007fc541b50a42
+0x00007fff8c7f0200:   0000000000000000 0000000000000000
+0x00007fff8c7f0210:   0000000000000000 0000000000000000
+0x00007fff8c7f0220:   000000000187cb50 0000000000000000 
+
+Instructions: (pc=0x00007fc4ba2bfbdb)
+0x00007fc4ba2bfbcb:   73 ff ff 48 85 db 74 1d 48 8b 2b 48 85 ed 74 06
+0x00007fc4ba2bfbdb:   48 39 45 00 74 2f 48 89 c6 48 89 df e8 84 00 e1 
+
+Stack: [0x00007fff8c5f3000,0x00007fff8c7f3000],  sp=0x00007fff8c7f0030,  free space=7f40000000000000018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libgtk-x11-2.0.so.0+0x257bdb]  gtk_widget_realize+0x1b
+
+[error occurred during error reporting (printing native stack), id 0xb]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.gtk.OS._gtk_widget_realize(J)V+0
+j  org.eclipse.swt.internal.gtk.OS.gtk_widget_realize(J)V+8
+j  org.eclipse.swt.widgets.Control.eventWindow()J+6
+j  org.eclipse.swt.widgets.Control.setCursor(J)V+1
+j  org.eclipse.swt.widgets.Shell.setCursor(J)V+39
+j  org.eclipse.swt.widgets.Control.setCursor(Lorg/eclipse/swt/graphics/Cursor;)V+38
+j  org.eclipse.swt.custom.BusyIndicator.showWhile(Lorg/eclipse/swt/widgets/Display;Ljava/lang/Runnable;)V+90
+j  org.eclipse.ui.internal.WorkbenchPage.showView(Ljava/lang/String;Ljava/lang/String;I)Lorg/eclipse/ui/IViewPart;+72
+j  com.comsol.gui.swt.SWTDesktop.showView(Ljava/lang/String;Z)V+279
+j  com.comsol.gui.d.showView(Lcom/comsol/gui/views/f;Z)V+404
+j  com.comsol.gui.d.showView(Lcom/comsol/gui/views/f;)V+3
+j  com.comsol.guimph.aa.showNewView(Lcom/comsol/model/edit/util/ContextInfo;Lcom/comsol/model/edit/util/IFeatureDataProvider;)V+270
+j  com.comsol.guimph.MphDesktopWindow.showModelNavigator(Lcom/comsol/guimph/modnav/ModelNavigatorType;Lcom/comsol/model/internal/ModelNode;Lcom/comsol/model/internal/GeomSequence;)V+53
+j  com.comsol.guimph.MphDesktopWindow.initializeNewModel(Lcom/comsol/guimph/MphDesktopWindow$ResetType;)V+122
+j  com.comsol.guimph.MphApplication.doPostInit(Lcom/comsol/gui/DesktopWindow;)V+278
+j  com.comsol.gui.CsApplication.postInit(Lcom/comsol/gui/DesktopWindow;)V+129
+j  com.comsol.gui.DesktopWindow.postShowInit()V+5
+j  com.comsol.guimph.MphDesktopWindow.postShowInit()V+5
+j  com.comsol.gui.swt.SWTDesktop.e()V+4
+j  com.comsol.gui.swt.h.postWindowCreate()V+166
+j  org.eclipse.ui.internal.WorkbenchWindow.fireWindowCreated()V+4
+j  org.eclipse.ui.internal.WorkbenchWindow.open()I+13
+j  org.eclipse.ui.internal.Workbench$70.runWithException()V+6
+j  org.eclipse.ui.internal.StartupThreading$StartupRunnable.run()V+1
+j  org.eclipse.swt.widgets.RunnableLock.run()V+11
+j  org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Z)Z+29
+j  org.eclipse.swt.widgets.Display.runAsyncMessages(Z)Z+5
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+61
+j  org.eclipse.ui.application.WorkbenchAdvisor.openWindows()Z+44
+j  org.eclipse.ui.internal.Workbench$33.runWithException()V+27
+j  org.eclipse.ui.internal.StartupThreading$StartupRunnable.run()V+1
+j  org.eclipse.swt.widgets.RunnableLock.run()V+11
+j  org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Z)Z+29
+j  org.eclipse.swt.widgets.Display.runAsyncMessages(Z)Z+5
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+61
+j  org.eclipse.ui.internal.Workbench.runUI()I+329
+j  org.eclipse.ui.internal.Workbench.access$4(Lorg/eclipse/ui/internal/Workbench;)I+1
+j  org.eclipse.ui.internal.Workbench$7.run()V+55
+j  org.eclipse.core.databinding.observable.Realm.runWithDefault(Lorg/eclipse/core/databinding/observable/Realm;Ljava/lang/Runnable;)V+12
+j  org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+18
+j  org.eclipse.ui.PlatformUI.createAndRunWorkbench(Lorg/eclipse/swt/widgets/Display;Lorg/eclipse/ui/application/WorkbenchAdvisor;)I+2
+j  com.comsol.gui.swt.SWTDesktop.open()V+38
+j  com.comsol.gui.DesktopWindow.open()V+4
+j  com.comsol.gui.CsApplication.startApplication()Lcom/comsol/gui/DesktopWindow;+21
+j  com.comsol.gui.CsApplication.doStart([Ljava/lang/String;)Ljava/lang/Object;+44
+j  com.comsol.guimph.MphApplication.doStart([Ljava/lang/String;)Ljava/lang/Object;+22
+j  com.comsol.util.application.ComsolApplication.doStart([Ljava/lang/String;)Ljava/lang/Object;+546
+j  com.comsol.util.application.CsBaseApplication.start(Lorg/eclipse/equinox/app/IApplicationContext;)Ljava/lang/Object;+916
+j  org.eclipse.equinox.internal.app.EclipseAppHandle.run(Ljava/lang/Object;)Ljava/lang/Object;+135
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(Ljava/lang/Object;)Ljava/lang/Object;+103
+j  org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(Ljava/lang/Object;)Ljava/lang/Object;+29
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run(Ljava/lang/Object;)Ljava/lang/Object;+149
+j  org.eclipse.core.runtime.adaptor.EclipseStarter.run([Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Object;+183
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+161
+j  org.eclipse.equinox.launcher.Main.invokeFramework([Ljava/lang/String;[Ljava/net/URL;)V+211
+j  org.eclipse.equinox.launcher.Main.basicRun([Ljava/lang/String;)V+126
+j  org.eclipse.equinox.launcher.Main.run([Ljava/lang/String;)I+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fc454001000 JavaThread "Thread-1" [_thread_blocked, id=29186, stack(0x00007fc4623f9000,0x00007fc4627fa000)]
+  0x00007fc4cc001000 JavaThread "SIGHUP handler" daemon [_thread_blocked, id=29181, stack(0x00007fc4637fe000,0x00007fc463bff000)]
+  0x00007fc47c001000 JavaThread "Worker-1" [_thread_blocked, id=29172, stack(0x00007fc463bff000,0x00007fc464000000)]
+  0x00000000010f7800 JavaThread "Thread-6" [_thread_blocked, id=29165, stack(0x00007fc478b51000,0x00007fc478f52000)]
+  0x00000000010d0800 JavaThread "Thread-5" [_thread_blocked, id=29164, stack(0x00007fc479374000,0x00007fc479775000)]
+  0x00000000007d9000 JavaThread "pool-1-thread-1" [_thread_blocked, id=29163, stack(0x00007fc47b3fe000,0x00007fc47b7ff000)]
+  0x0000000000b8c800 JavaThread "Worker-0" [_thread_blocked, id=29161, stack(0x00007fc4800e1000,0x00007fc4804e2000)]
+  0x00007fc4a4001800 JavaThread "com.comsol.logger.b@2e82674b" daemon [_thread_blocked, id=29160, stack(0x00007fc4b05b0000,0x00007fc4b09b1000)]
+  0x0000000000a58000 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=29159, stack(0x00007fc4b09b1000,0x00007fc4b0db2000)]
+  0x0000000000a00000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=29158, stack(0x00007fc4b0db2000,0x00007fc4b11b3000)]
+  0x00007fc49814e800 JavaThread "Worker-JM" [_thread_blocked, id=29157, stack(0x00007fc4b19ac000,0x00007fc4b1dad000)]
+  0x00007fc4984a5000 JavaThread "Bundle File Closer" daemon [_thread_blocked, id=29155, stack(0x00007fc4b1fa0000,0x00007fc4b23a1000)]
+  0x000000000094b800 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=29153, stack(0x00007fc4b23a1000,0x00007fc4b27a2000)]
+  0x0000000000821800 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=29152, stack(0x00007fc4b27a2000,0x00007fc4b2ba3000)]
+  0x0000000000902000 JavaThread "State Saver" [_thread_in_native, id=29151, stack(0x00007fc4b2ba3000,0x00007fc4b2fa4000)]
+  0x0000000000984800 JavaThread "Framework Active Thread" [_thread_blocked, id=29150, stack(0x00007fc4b2fa4000,0x00007fc4b33a5000)]
+  0x0000000000759000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=29146, stack(0x00007fc4d37fe000,0x00007fc4d3bff000)]
+  0x0000000000757000 JavaThread "CompilerThread1" daemon [_thread_blocked, id=29145, stack(0x00007fc4f00e9000,0x00007fc4f01ea000)]
+  0x0000000000754000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=29144, stack(0x00007fc4f01ea000,0x00007fc4f02eb000)]
+  0x0000000000752000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=29143, stack(0x00007fc4d3bff000,0x00007fc4d4000000)]
+  0x0000000000736000 JavaThread "Finalizer" daemon [_thread_blocked, id=29142, stack(0x00007fc4f02eb000,0x00007fc4f06ec000)]
+  0x0000000000734000 JavaThread "Reference Handler" daemon [_thread_blocked, id=29141, stack(0x00007fc4f06ec000,0x00007fc4f0aed000)]
+=>0x00000000006d4000 JavaThread "main" [_thread_in_native, id=29135, stack(0x00007fff8c5f3000,0x00007fff8c7f3000)]
+
+Other Threads:
+  0x000000000072f800 VMThread [stack: 0x00007fc4f0aed000,0x00007fc4f0bee000] [id=29140]
+  0x000000000075c000 WatcherThread [stack: 0x00007fc4d36fd000,0x00007fc4d37fe000] [id=29147]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 104000K, used 68131K [0x00007fc52c5f0000, 0x00007fc534560000, 0x00007fc541b40000)
+  eden space 95936K, 68% used [0x00007fc52c5f0000,0x00007fc530640db0,0x00007fc5323a0000)
+  from space 8064K, 28% used [0x00007fc5323a0000,0x00007fc5325d8000,0x00007fc532b80000)
+  to   space 7744K, 0% used [0x00007fc533dd0000,0x00007fc533dd0000,0x00007fc534560000)
+ PSOldGen        total 42304K, used 30190K [0x00007fc501b40000, 0x00007fc504490000, 0x00007fc52c5f0000)
+  object space 42304K, 71% used [0x00007fc501b40000,0x00007fc5038bb870,0x00007fc504490000)
+ PSPermGen       total 68800K, used 68642K [0x00007fc4f1b40000, 0x00007fc4f5e70000, 0x00007fc501b40000)
+  object space 68800K, 99% used [0x00007fc4f1b40000,0x00007fc4f5e488b8,0x00007fc4f5e70000)
+
+Dynamic libraries:
+00400000-00405000 r-xp 00000000 08:08 10098095                           /home/souvik/COMSOL43/bin/glnxa64/comsollauncher
+00504000-00505000 rw-p 00004000 08:08 10098095                           /home/souvik/COMSOL43/bin/glnxa64/comsollauncher
+006c8000-01b7c000 rw-p 00000000 00:00 0                                  [heap]
+7fc454000000-7fc454021000 rw-p 00000000 00:00 0 
+7fc454021000-7fc458000000 ---p 00000000 00:00 0 
+7fc458000000-7fc458021000 rw-p 00000000 00:00 0 
+7fc458021000-7fc45c000000 ---p 00000000 00:00 0 
+7fc45c000000-7fc45c021000 rw-p 00000000 00:00 0 
+7fc45c021000-7fc460000000 ---p 00000000 00:00 0 
+7fc4623f9000-7fc4623fc000 ---p 00000000 00:00 0 
+7fc4623fc000-7fc4627fa000 rwxp 00000000 00:00 0 
+7fc4627fa000-7fc4627fd000 ---p 00000000 00:00 0 
+7fc4627fd000-7fc462bfb000 rwxp 00000000 00:00 0 
+7fc462bfb000-7fc462bfe000 ---p 00000000 00:00 0 
+7fc462bfe000-7fc462ffc000 rwxp 00000000 00:00 0 
+7fc462ffc000-7fc462fff000 ---p 00000000 00:00 0 
+7fc462fff000-7fc4633fd000 rwxp 00000000 00:00 0 
+7fc4633fd000-7fc463400000 ---p 00000000 00:00 0 
+7fc463400000-7fc4637fe000 rwxp 00000000 00:00 0 
+7fc4637fe000-7fc463801000 ---p 00000000 00:00 0 
+7fc463801000-7fc463bff000 rwxp 00000000 00:00 0 
+7fc463bff000-7fc463c02000 ---p 00000000 00:00 0 
+7fc463c02000-7fc464000000 rwxp 00000000 00:00 0 
+7fc464000000-7fc464060000 rw-p 00000000 00:00 0 
+7fc464060000-7fc468000000 ---p 00000000 00:00 0 
+7fc468000000-7fc468022000 rw-p 00000000 00:00 0 
+7fc468022000-7fc46c000000 ---p 00000000 00:00 0 
+7fc46c000000-7fc46c1b8000 rw-p 00000000 00:00 0 
+7fc46c1b8000-7fc470000000 ---p 00000000 00:00 0 
+7fc4702de000-7fc470383000 r--p 00000000 08:07 1703835                    /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans-Bold.ttf
+7fc470383000-7fc470384000 ---p 00000000 00:00 0 
+7fc470384000-7fc470b84000 rwxp 00000000 00:00 0 
+7fc470b84000-7fc470b90000 r-xp 00000000 08:07 3270890                    /lib/x86_64-linux-gnu/libudev.so.0.13.0
+7fc470b90000-7fc470d8f000 ---p 0000c000 08:07 3270890                    /lib/x86_64-linux-gnu/libudev.so.0.13.0
+7fc470d8f000-7fc470d90000 r--p 0000b000 08:07 3270890                    /lib/x86_64-linux-gnu/libudev.so.0.13.0
+7fc470d90000-7fc470d91000 rw-p 0000c000 08:07 3270890                    /lib/x86_64-linux-gnu/libudev.so.0.13.0
+7fc470d91000-7fc470dd3000 r-xp 00000000 08:07 3270892                    /lib/x86_64-linux-gnu/libdbus-1.so.3.5.8
+7fc470dd3000-7fc470fd3000 ---p 00042000 08:07 3270892                    /lib/x86_64-linux-gnu/libdbus-1.so.3.5.8
+7fc470fd3000-7fc470fd4000 r--p 00042000 08:07 3270892                    /lib/x86_64-linux-gnu/libdbus-1.so.3.5.8
+7fc470fd4000-7fc470fd5000 rw-p 00043000 08:07 3270892                    /lib/x86_64-linux-gnu/libdbus-1.so.3.5.8
+7fc470fd5000-7fc470feb000 r-xp 00000000 08:07 1308734                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7fc470feb000-7fc4711ea000 ---p 00016000 08:07 1308734                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7fc4711ea000-7fc4711eb000 r--p 00015000 08:07 1308734                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7fc4711eb000-7fc4711ec000 rw-p 00016000 08:07 1308734                    /usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so
+7fc4711ec000-7fc471214000 r-xp 00000000 08:07 1308735                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7fc471214000-7fc471413000 ---p 00028000 08:07 1308735                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7fc471413000-7fc471414000 r--p 00027000 08:07 1308735                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7fc471414000-7fc471415000 rw-p 00028000 08:07 1308735                    /usr/lib/x86_64-linux-gnu/gio/modules/libgvfsdbus.so
+7fc471415000-7fc471416000 ---p 00000000 00:00 0 
+7fc471416000-7fc471c16000 rwxp 00000000 00:00 0 
+7fc471c16000-7fc4735e6000 r-xp 00000000 08:07 1080063                    /usr/lib/nvidia-304/libnvidia-glcore.so.304.88
+7fc4735e6000-7fc4737e5000 ---p 019d0000 08:07 1080063                    /usr/lib/nvidia-304/libnvidia-glcore.so.304.88
+7fc4737e5000-7fc473fe6000 rwxp 019cf000 08:07 1080063                    /usr/lib/nvidia-304/libnvidia-glcore.so.304.88
+7fc473fe6000-7fc474000000 rwxp 00000000 00:00 0 
+7fc474000000-7fc4741ce000 rw-p 00000000 00:00 0 
+7fc4741ce000-7fc478000000 ---p 00000000 00:00 0 
+7fc47807c000-7fc4780c0000 r-xp 00000000 08:07 1054505                    /usr/lib/x86_64-linux-gnu/libibus-1.0.so.0.401.0
+7fc4780c0000-7fc4782bf000 ---p 00044000 08:07 1054505                    /usr/lib/x86_64-linux-gnu/libibus-1.0.so.0.401.0
+7fc4782bf000-7fc4782c1000 r--p 00043000 08:07 1054505                    /usr/lib/x86_64-linux-gnu/libibus-1.0.so.0.401.0
+7fc4782c1000-7fc4782c2000 rw-p 00045000 08:07 1054505                    /usr/lib/x86_64-linux-gnu/libibus-1.0.so.0.401.0
+7fc4782c2000-7fc4782c3000 rw-p 00000000 00:00 0 
+7fc4782c3000-7fc4782dd000 r-xp 00000000 08:07 1047674                    /usr/lib/x86_64-linux-gnu/libdbusmenu-glib.so.4.0.13
+7fc4782dd000-7fc4784dc000 ---p 0001a000 08:07 1047674                    /usr/lib/x86_64-linux-gnu/libdbusmenu-glib.so.4.0.13
+7fc4784dc000-7fc4784dd000 r--p 00019000 08:07 1047674                    /usr/lib/x86_64-linux-gnu/libdbusmenu-glib.so.4.0.13
+7fc4784dd000-7fc4784de000 rw-p 0001a000 08:07 1047674                    /usr/lib/x86_64-linux-gnu/libdbusmenu-glib.so.4.0.13
+7fc4784de000-7fc4784f0000 r-xp 00000000 08:07 1046635                    /usr/lib/x86_64-linux-gnu/libdbusmenu-gtk.so.4.0.13
+7fc4784f0000-7fc4786ef000 ---p 00012000 08:07 1046635                    /usr/lib/x86_64-linux-gnu/libdbusmenu-gtk.so.4.0.13
+7fc4786ef000-7fc4786f0000 r--p 00011000 08:07 1046635                    /usr/lib/x86_64-linux-gnu/libdbusmenu-gtk.so.4.0.13
+7fc4786f0000-7fc4786f1000 rw-p 00012000 08:07 1046635                    /usr/lib/x86_64-linux-gnu/libdbusmenu-gtk.so.4.0.13
+7fc478743000-7fc478749000 r-xp 00000000 08:07 1309149                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7fc478749000-7fc478948000 ---p 00006000 08:07 1309149                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7fc478948000-7fc478949000 r--p 00005000 08:07 1309149                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7fc478949000-7fc47894a000 rw-p 00006000 08:07 1309149                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-ibus.so
+7fc47894a000-7fc478950000 r-xp 00000000 08:07 1308987                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
+7fc478950000-7fc478b4f000 ---p 00006000 08:07 1308987                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
+7fc478b4f000-7fc478b50000 r--p 00005000 08:07 1308987                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
+7fc478b50000-7fc478b51000 rw-p 00006000 08:07 1308987                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
+7fc478b51000-7fc478b54000 ---p 00000000 00:00 0 
+7fc478b54000-7fc478f52000 rwxp 00000000 00:00 0 
+7fc478fcf000-7fc478fe5000 r--p 00000000 08:07 1703961                    /usr/share/fonts/type1/gsfonts/n022024l.pfb
+7fc478fe5000-7fc478ffb000 r--p 00000000 08:07 1703958                    /usr/share/fonts/type1/gsfonts/n022023l.pfb
+7fc478ffb000-7fc479014000 r--p 00000000 08:07 1703955                    /usr/share/fonts/type1/gsfonts/n022004l.pfb
+7fc479014000-7fc47902c000 r--p 00000000 08:07 1703952                    /usr/share/fonts/type1/gsfonts/n022003l.pfb
+7fc47902c000-7fc479084000 r--p 00000000 08:07 1703863                    /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-BI.ttf
+7fc479084000-7fc4790e3000 r--p 00000000 08:07 1703868                    /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-RI.ttf
+7fc4790e3000-7fc479135000 r--p 00000000 08:07 1703862                    /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-B.ttf
+7fc479135000-7fc479146000 r--p 00000000 08:08 10625175                   /home/souvik/COMSOL43/data/fonts/Vera.ttf
+7fc479146000-7fc47914b000 r-xp 00000000 08:07 1317575                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+7fc47914b000-7fc47934a000 ---p 00005000 08:07 1317575                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+7fc47934a000-7fc47934b000 r--p 00004000 08:07 1317575                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+7fc47934b000-7fc47934c000 rw-p 00005000 08:07 1317575                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/menuproxies/libappmenu.so
+7fc47934c000-7fc479374000 r--s 00214000 08:08 9971497                    /home/souvik/COMSOL43/plugins/org.eclipse.ui.ide_3.7.0.v20110809-1737.jar
+7fc479374000-7fc479377000 ---p 00000000 00:00 0 
+7fc479377000-7fc479775000 rwxp 00000000 00:00 0 
+7fc479775000-7fc479780000 r-xp 00000000 08:08 10756887                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-atk-gtk-3738.so
+7fc479780000-7fc479880000 ---p 0000b000 08:08 10756887                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-atk-gtk-3738.so
+7fc479880000-7fc479881000 rw-p 0000b000 08:08 10756887                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-atk-gtk-3738.so
+7fc479881000-7fc479885000 r-xp 00000000 08:07 1308993                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fc479885000-7fc479a85000 ---p 00004000 08:07 1308993                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fc479a85000-7fc479a86000 r--p 00004000 08:07 1308993                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fc479a86000-7fc479a87000 rw-p 00005000 08:07 1308993                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fc479a88000-7fc479c88000 rw-s 4f949000 00:05 10453                      /dev/nvidia0
+7fc479c88000-7fc479d88000 rw-s 36e98000 00:05 10453                      /dev/nvidia0
+7fc479d88000-7fc479dc8000 rw-s 03f03000 00:05 10453                      /dev/nvidia0
+7fc479dc8000-7fc479de8000 rw-s 391e3000 00:05 10453                      /dev/nvidia0
+7fc479de8000-7fc479e28000 rw-s 3939e000 00:05 10453                      /dev/nvidia0
+7fc479e28000-7fc479e2b000 r-xp 00000000 08:07 1080054                    /usr/lib/nvidia-304/tls/libnvidia-tls.so.304.88
+7fc479e2b000-7fc47a02a000 ---p 00003000 08:07 1080054                    /usr/lib/nvidia-304/tls/libnvidia-tls.so.304.88
+7fc47a02a000-7fc47a02b000 rw-p 00002000 08:07 1080054                    /usr/lib/nvidia-304/tls/libnvidia-tls.so.304.88
+7fc47a02b000-7fc47a0f5000 r-xp 00000000 08:07 1080065                    /usr/lib/nvidia-304/libGL.so.304.88
+7fc47a0f5000-7fc47a2f5000 ---p 000ca000 08:07 1080065                    /usr/lib/nvidia-304/libGL.so.304.88
+7fc47a2f5000-7fc47a332000 rwxp 000ca000 08:07 1080065                    /usr/lib/nvidia-304/libGL.so.304.88
+7fc47a332000-7fc47a348000 rwxp 00000000 00:00 0 
+7fc47a348000-7fc47a6f0000 r-xp 00000000 08:08 11541674                   /home/souvik/COMSOL43/lib/glnxa64/libcs3d_ogl.so
+7fc47a6f0000-7fc47a7ef000 ---p 003a8000 08:08 11541674                   /home/souvik/COMSOL43/lib/glnxa64/libcs3d_ogl.so
+7fc47a7ef000-7fc47a81a000 rw-p 003a7000 08:08 11541674                   /home/souvik/COMSOL43/lib/glnxa64/libcs3d_ogl.so
+7fc47a81a000-7fc47a82a000 rw-p 00000000 00:00 0 
+7fc47a82a000-7fc47a82c000 r-xp 00000000 08:08 11541646                   /home/souvik/COMSOL43/lib/glnxa64/libcs3d_swt.so
+7fc47a82c000-7fc47a92b000 ---p 00002000 08:08 11541646                   /home/souvik/COMSOL43/lib/glnxa64/libcs3d_swt.so
+7fc47a92b000-7fc47a92c000 rw-p 00001000 08:08 11541646                   /home/souvik/COMSOL43/lib/glnxa64/libcs3d_swt.so
+7fc47a92c000-7fc47aacf000 r-xp 00000000 08:08 11541625                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_ogl.so
+7fc47aacf000-7fc47abce000 ---p 001a3000 08:08 11541625                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_ogl.so
+7fc47abce000-7fc47abe2000 rw-p 001a2000 08:08 11541625                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_ogl.so
+7fc47abe2000-7fc47abfa000 r-xp 00000000 08:08 11541657                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_swt_ogl.so
+7fc47abfa000-7fc47acf9000 ---p 00018000 08:08 11541657                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_swt_ogl.so
+7fc47acf9000-7fc47acfa000 rw-p 00017000 08:08 11541657                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_swt_ogl.so
+7fc47acfa000-7fc47acfc000 r-xp 00000000 08:07 1316413                    /usr/lib/x86_64-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+7fc47acfc000-7fc47aefb000 ---p 00002000 08:07 1316413                    /usr/lib/x86_64-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+7fc47aefb000-7fc47aefc000 r--p 00001000 08:07 1316413                    /usr/lib/x86_64-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+7fc47aefc000-7fc47aefd000 rw-p 00002000 08:07 1316413                    /usr/lib/x86_64-linux-gnu/pango/1.6.0/modules/pango-basic-fc.so
+7fc47aefd000-7fc47aefe000 r-xp 00000000 08:07 1055340                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3200.4
+7fc47aefe000-7fc47b0fd000 ---p 00001000 08:07 1055340                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3200.4
+7fc47b0fd000-7fc47b0fe000 r--p 00000000 08:07 1055340                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3200.4
+7fc47b0fe000-7fc47b0ff000 rw-p 00001000 08:07 1055340                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.3200.4
+7fc47b0ff000-7fc47b173000 r-xp 00000000 08:08 10756885                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-pi-gtk-3738.so
+7fc47b173000-7fc47b272000 ---p 00074000 08:08 10756885                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-pi-gtk-3738.so
+7fc47b272000-7fc47b275000 rw-p 00073000 08:08 10756885                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-pi-gtk-3738.so
+7fc47b275000-7fc47b277000 rw-p 00000000 00:00 0 
+7fc47b277000-7fc47b2f5000 r-xp 00000000 08:08 10756884                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-gtk-3738.so
+7fc47b2f5000-7fc47b3f4000 ---p 0007e000 08:08 10756884                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-gtk-3738.so
+7fc47b3f4000-7fc47b3fb000 rw-p 0007d000 08:08 10756884                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/29/1/.cp/libswt-gtk-3738.so
+7fc47b3fb000-7fc47b3fe000 rw-p 00000000 00:00 0 
+7fc47b3fe000-7fc47b401000 ---p 00000000 00:00 0 
+7fc47b401000-7fc47b7ff000 rwxp 00000000 00:00 0 
+7fc47b7ff000-7fc47b800000 ---p 00000000 00:00 0 
+7fc47b800000-7fc47c000000 rwxp 00000000 00:00 0 
+7fc47c000000-7fc47c021000 rw-p 00000000 00:00 0 
+7fc47c021000-7fc480000000 ---p 00000000 00:00 0 
+7fc48000c000-7fc480018000 r--s 00081000 08:08 9971603                    /home/souvik/COMSOL43/plugins/org.eclipse.ui.editors_3.7.0.v20110517-0800.jar
+7fc480018000-7fc480038000 rw-s 36fde000 00:05 10453                      /dev/nvidia0
+7fc480038000-7fc48008a000 r--p 00000000 08:07 1703838                    /usr/share/fonts/truetype/ttf-dejavu/DejaVuSansMono.ttf
+7fc48008a000-7fc4800e1000 r--p 00000000 08:07 1703867                    /usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-R.ttf
+7fc4800e1000-7fc4800e4000 ---p 00000000 00:00 0 
+7fc4800e4000-7fc4804e2000 rwxp 00000000 00:00 0 
+7fc4804e2000-7fc4807b6000 r-xp 00000000 08:08 11541635                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_common.so
+7fc4807b6000-7fc4808b6000 ---p 002d4000 08:08 11541635                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_common.so
+7fc4808b6000-7fc4808c4000 rw-p 002d4000 08:08 11541635                   /home/souvik/COMSOL43/lib/glnxa64/libcsgraphics_common.so
+7fc4808c4000-7fc4808c5000 rw-p 00000000 00:00 0 
+7fc4808c5000-7fc4809dd000 r-xp 00000000 08:08 11541640                   /home/souvik/COMSOL43/lib/glnxa64/libcstextrenderer.so
+7fc4809dd000-7fc480add000 ---p 00118000 08:08 11541640                   /home/souvik/COMSOL43/lib/glnxa64/libcstextrenderer.so
+7fc480add000-7fc480aea000 rw-p 00118000 08:08 11541640                   /home/souvik/COMSOL43/lib/glnxa64/libcstextrenderer.so
+7fc480aea000-7fc480af6000 r-xp 00000000 08:08 11541659                   /home/souvik/COMSOL43/lib/glnxa64/libcsjnitextrenderer.so
+7fc480af6000-7fc480bf5000 ---p 0000c000 08:08 11541659                   /home/souvik/COMSOL43/lib/glnxa64/libcsjnitextrenderer.so
+7fc480bf5000-7fc480bf6000 rw-p 0000b000 08:08 11541659                   /home/souvik/COMSOL43/lib/glnxa64/libcsjnitextrenderer.so
+7fc480bf6000-7fc482525000 r-xp 00000000 08:08 11541678                   /home/souvik/COMSOL43/lib/glnxa64/libcsmklblas.so
+7fc482525000-7fc482625000 ---p 0192f000 08:08 11541678                   /home/souvik/COMSOL43/lib/glnxa64/libcsmklblas.so
+7fc482625000-7fc48263e000 rw-p 0192f000 08:08 11541678                   /home/souvik/COMSOL43/lib/glnxa64/libcsmklblas.so
+7fc48263e000-7fc482643000 rw-p 00000000 00:00 0 
+7fc482643000-7fc482712000 r-xp 00000000 08:08 11541641                   /home/souvik/COMSOL43/lib/glnxa64/libcsfftw3.so.3.1.2
+7fc482712000-7fc482811000 ---p 000cf000 08:08 11541641                   /home/souvik/COMSOL43/lib/glnxa64/libcsfftw3.so.3.1.2
+7fc482811000-7fc48281a000 rw-p 000ce000 08:08 11541641                   /home/souvik/COMSOL43/lib/glnxa64/libcsfftw3.so.3.1.2
+7fc48281a000-7fc48282c000 r-xp 00000000 08:08 11541656                   /home/souvik/COMSOL43/lib/glnxa64/libcsmpi.so
+7fc48282c000-7fc48292c000 ---p 00012000 08:08 11541656                   /home/souvik/COMSOL43/lib/glnxa64/libcsmpi.so
+7fc48292c000-7fc48292d000 rw-p 00012000 08:08 11541656                   /home/souvik/COMSOL43/lib/glnxa64/libcsmpi.so
+7fc48292d000-7fc482a8b000 r-xp 00000000 08:08 11541679                   /home/souvik/COMSOL43/lib/glnxa64/libifcoremt.so.5
+7fc482a8b000-7fc482b8a000 ---p 0015e000 08:08 11541679                   /home/souvik/COMSOL43/lib/glnxa64/libifcoremt.so.5
+7fc482b8a000-7fc482b9b000 rw-p 0015d000 08:08 11541679                   /home/souvik/COMSOL43/lib/glnxa64/libifcoremt.so.5
+7fc482b9b000-7fc482bcc000 rw-p 00000000 00:00 0 
+7fc482bcc000-7fc482bfd000 r-xp 00000000 08:08 11541647                   /home/souvik/COMSOL43/lib/glnxa64/libifport.so.5
+7fc482bfd000-7fc482cfc000 ---p 00031000 08:08 11541647                   /home/souvik/COMSOL43/lib/glnxa64/libifport.so.5
+7fc482cfc000-7fc482cff000 rw-p 00030000 08:08 11541647                   /home/souvik/COMSOL43/lib/glnxa64/libifport.so.5
+7fc482cff000-7fc482d05000 rw-p 00000000 00:00 0 
+7fc482d05000-7fc482d3b000 r-xp 00000000 08:08 11541652                   /home/souvik/COMSOL43/lib/glnxa64/libcssundials.so
+7fc482d3b000-7fc482e3b000 ---p 00036000 08:08 11541652                   /home/souvik/COMSOL43/lib/glnxa64/libcssundials.so
+7fc482e3b000-7fc482e3c000 rw-p 00036000 08:08 11541652                   /home/souvik/COMSOL43/lib/glnxa64/libcssundials.so
+7fc482e3c000-7fc482e61000 r-xp 00000000 08:08 11541627                   /home/souvik/COMSOL43/lib/glnxa64/libcsblas.so
+7fc482e61000-7fc482f61000 ---p 00025000 08:08 11541627                   /home/souvik/COMSOL43/lib/glnxa64/libcsblas.so
+7fc482f61000-7fc482f62000 rw-p 00025000 08:08 11541627                   /home/souvik/COMSOL43/lib/glnxa64/libcsblas.so
+7fc482f62000-7fc482f93000 r-xp 00000000 08:08 11541629                   /home/souvik/COMSOL43/lib/glnxa64/libcsspecfun.so
+7fc482f93000-7fc483093000 ---p 00031000 08:08 11541629                   /home/souvik/COMSOL43/lib/glnxa64/libcsspecfun.so
+7fc483093000-7fc483094000 rw-p 00031000 08:08 11541629                   /home/souvik/COMSOL43/lib/glnxa64/libcsspecfun.so
+7fc483094000-7fc483098000 r-xp 00000000 08:08 11541655                   /home/souvik/COMSOL43/lib/glnxa64/libcscutil.so
+7fc483098000-7fc483198000 ---p 00004000 08:08 11541655                   /home/souvik/COMSOL43/lib/glnxa64/libcscutil.so
+7fc483198000-7fc48319a000 rw-p 00004000 08:08 11541655                   /home/souvik/COMSOL43/lib/glnxa64/libcscutil.so
+7fc48319a000-7fc483201000 rw-p 00000000 00:00 0 
+7fc483201000-7fc4832d3000 r-xp 00000000 08:08 11671454                   /home/souvik/COMSOL43/lib/glnxa64/ipv4/libcsnutil.so
+7fc4832d3000-7fc4833d2000 ---p 000d2000 08:08 11671454                   /home/souvik/COMSOL43/lib/glnxa64/ipv4/libcsnutil.so
+7fc4833d2000-7fc4833d7000 rw-p 000d1000 08:08 11671454                   /home/souvik/COMSOL43/lib/glnxa64/ipv4/libcsnutil.so
+7fc4833d7000-7fc4833f1000 rw-p 00000000 00:00 0 
+7fc4833f1000-7fc483527000 r-xp 00000000 08:08 11541660                   /home/souvik/COMSOL43/lib/glnxa64/libcsspooles.so
+7fc483527000-7fc483627000 ---p 00136000 08:08 11541660                   /home/souvik/COMSOL43/lib/glnxa64/libcsspooles.so
+7fc483627000-7fc48362b000 rw-p 00136000 08:08 11541660                   /home/souvik/COMSOL43/lib/glnxa64/libcsspooles.so
+7fc48362b000-7fc483653000 r-xp 00000000 08:08 11541654                   /home/souvik/COMSOL43/lib/glnxa64/libcsarpack.so
+7fc483653000-7fc483752000 ---p 00028000 08:08 11541654                   /home/souvik/COMSOL43/lib/glnxa64/libcsarpack.so
+7fc483752000-7fc483754000 rw-p 00027000 08:08 11541654                   /home/souvik/COMSOL43/lib/glnxa64/libcsarpack.so
+7fc483754000-7fc483755000 rw-p 00000000 00:00 0 
+7fc483755000-7fc4838a9000 r-xp 00000000 08:08 11541680                   /home/souvik/COMSOL43/lib/glnxa64/libcsutil.so
+7fc4838a9000-7fc4839a9000 ---p 00154000 08:08 11541680                   /home/souvik/COMSOL43/lib/glnxa64/libcsutil.so
+7fc4839a9000-7fc4839b0000 rw-p 00154000 08:08 11541680                   /home/souvik/COMSOL43/lib/glnxa64/libcsutil.so
+7fc4839b0000-7fc4839ce000 r-xp 00000000 08:08 11541632                   /home/souvik/COMSOL43/lib/glnxa64/libcscluster.so
+7fc4839ce000-7fc483ace000 ---p 0001e000 08:08 11541632                   /home/souvik/COMSOL43/lib/glnxa64/libcscluster.so
+7fc483ace000-7fc483acf000 rw-p 0001e000 08:08 11541632                   /home/souvik/COMSOL43/lib/glnxa64/libcscluster.so
+7fc483acf000-7fc484032000 r-xp 00000000 08:08 11541664                   /home/souvik/COMSOL43/lib/glnxa64/libcsarray.so
+7fc484032000-7fc484131000 ---p 00563000 08:08 11541664                   /home/souvik/COMSOL43/lib/glnxa64/libcsarray.so
+7fc484131000-7fc48419c000 rw-p 00562000 08:08 11541664                   /home/souvik/COMSOL43/lib/glnxa64/libcsarray.so
+7fc48419c000-7fc48419d000 rw-p 00000000 00:00 0 
+7fc48419d000-7fc484236000 r-xp 00000000 08:08 11541624                   /home/souvik/COMSOL43/lib/glnxa64/libcsclusterarray.so
+7fc484236000-7fc484336000 ---p 00099000 08:08 11541624                   /home/souvik/COMSOL43/lib/glnxa64/libcsclusterarray.so
+7fc484336000-7fc484339000 rw-p 00099000 08:08 11541624                   /home/souvik/COMSOL43/lib/glnxa64/libcsclusterarray.so
+7fc484339000-7fc484bff000 r-xp 00000000 08:08 11541639                   /home/souvik/COMSOL43/lib/glnxa64/libcsgeom.so
+7fc484bff000-7fc484cfe000 ---p 008c6000 08:08 11541639                   /home/souvik/COMSOL43/lib/glnxa64/libcsgeom.so
+7fc484cfe000-7fc484d33000 rw-p 008c5000 08:08 11541639                   /home/souvik/COMSOL43/lib/glnxa64/libcsgeom.so
+7fc484d33000-7fc484d7b000 r-xp 00000000 08:08 11541637                   /home/souvik/COMSOL43/lib/glnxa64/libcsdatacarrier.so
+7fc484d7b000-7fc484e7a000 ---p 00048000 08:08 11541637                   /home/souvik/COMSOL43/lib/glnxa64/libcsdatacarrier.so
+7fc484e7a000-7fc484e7c000 rw-p 00047000 08:08 11541637                   /home/souvik/COMSOL43/lib/glnxa64/libcsdatacarrier.so
+7fc484e7c000-7fc4855f9000 r-xp 00000000 08:08 11541683                   /home/souvik/COMSOL43/lib/glnxa64/libcsmesh.so
+7fc4855f9000-7fc4856f8000 ---p 0077d000 08:08 11541683                   /home/souvik/COMSOL43/lib/glnxa64/libcsmesh.so
+7fc4856f8000-7fc48570f000 rw-p 0077c000 08:08 11541683                   /home/souvik/COMSOL43/lib/glnxa64/libcsmesh.so
+7fc48570f000-7fc486b02000 r-xp 00000000 08:08 11541645                   /home/souvik/COMSOL43/lib/glnxa64/libcsxmesh.so
+7fc486b02000-7fc486c02000 ---p 013f3000 08:08 11541645                   /home/souvik/COMSOL43/lib/glnxa64/libcsxmesh.so
+7fc486c02000-7fc486c59000 rw-p 013f3000 08:08 11541645                   /home/souvik/COMSOL43/lib/glnxa64/libcsxmesh.so
+7fc486c59000-7fc4870f4000 r-xp 00000000 08:08 11541623                   /home/souvik/COMSOL43/lib/glnxa64/libcssolver.so
+7fc4870f4000-7fc4871f4000 ---p 0049b000 08:08 11541623                   /home/souvik/COMSOL43/lib/glnxa64/libcssolver.so
+7fc4871f4000-7fc48720e000 rw-p 0049b000 08:08 11541623                   /home/souvik/COMSOL43/lib/glnxa64/libcssolver.so
+7fc48720e000-7fc48724f000 r-xp 00000000 08:08 11541638                   /home/souvik/COMSOL43/lib/glnxa64/libcspost.so
+7fc48724f000-7fc48734f000 ---p 00041000 08:08 11541638                   /home/souvik/COMSOL43/lib/glnxa64/libcspost.so
+7fc48734f000-7fc487351000 rw-p 00041000 08:08 11541638                   /home/souvik/COMSOL43/lib/glnxa64/libcspost.so
+7fc487351000-7fc487683000 r-xp 00000000 08:08 11541663                   /home/souvik/COMSOL43/lib/glnxa64/libcsjni.so
+7fc487683000-7fc487783000 ---p 00332000 08:08 11541663                   /home/souvik/COMSOL43/lib/glnxa64/libcsjni.so
+7fc487783000-7fc48778b000 rw-p 00332000 08:08 11541663                   /home/souvik/COMSOL43/lib/glnxa64/libcsjni.so
+7fc48778b000-7fc4877a1000 r-xp 00000000 08:08 10362721                   /home/souvik/matlab/bin/glnxa64/libgcc_s.so.1
+7fc4877a1000-7fc4879a0000 ---p 00016000 08:08 10362721                   /home/souvik/matlab/bin/glnxa64/libgcc_s.so.1
+7fc4879a0000-7fc4879a1000 rw-p 00015000 08:08 10362721                   /home/souvik/matlab/bin/glnxa64/libgcc_s.so.1
+7fc4879a1000-7fc487a92000 r-xp 00000000 08:08 10362722                   /home/souvik/matlab/bin/glnxa64/libstdc++.so.6.0.13
+7fc487a92000-7fc487c92000 ---p 000f1000 08:08 10362722                   /home/souvik/matlab/bin/glnxa64/libstdc++.so.6.0.13
+7fc487c92000-7fc487c99000 r--p 000f1000 08:08 10362722                   /home/souvik/matlab/bin/glnxa64/libstdc++.so.6.0.13
+7fc487c99000-7fc487c9b000 rw-p 000f8000 08:08 10362722                   /home/souvik/matlab/bin/glnxa64/libstdc++.so.6.0.13
+7fc487c9b000-7fc487cb0000 rw-p 00000000 00:00 0 
+7fc487cb0000-7fc487d36000 r-xp 00000000 08:08 11541677                   /home/souvik/COMSOL43/lib/glnxa64/libiomp5.so
+7fc487d36000-7fc487e36000 ---p 00086000 08:08 11541677                   /home/souvik/COMSOL43/lib/glnxa64/libiomp5.so
+7fc487e36000-7fc487e3c000 rw-p 00086000 08:08 11541677                   /home/souvik/COMSOL43/lib/glnxa64/libiomp5.so
+7fc487e3c000-7fc487e43000 rw-p 00000000 00:00 0 
+7fc487e43000-7fc487eff000 r-xp 00000000 08:08 11541666                   /home/souvik/COMSOL43/lib/glnxa64/libsvml.so
+7fc487eff000-7fc487fff000 ---p 000bc000 08:08 11541666                   /home/souvik/COMSOL43/lib/glnxa64/libsvml.so
+7fc487fff000-7fc488000000 rw-p 000bc000 08:08 11541666                   /home/souvik/COMSOL43/lib/glnxa64/libsvml.so
+7fc488000000-7fc488021000 rw-p 00000000 00:00 0 
+7fc488021000-7fc48c000000 ---p 00000000 00:00 0 
+7fc48c000000-7fc48c021000 rw-p 00000000 00:00 0 
+7fc48c021000-7fc490000000 ---p 00000000 00:00 0 
+7fc490000000-7fc490032000 rw-p 00000000 00:00 0 
+7fc490032000-7fc494000000 ---p 00000000 00:00 0 
+7fc494000000-7fc494021000 rw-p 00000000 00:00 0 
+7fc494021000-7fc498000000 ---p 00000000 00:00 0 
+7fc498000000-7fc4986c8000 rw-p 00000000 00:00 0 
+7fc4986c8000-7fc49c000000 ---p 00000000 00:00 0 
+7fc49c000000-7fc49c04b000 rw-p 00000000 00:00 0 
+7fc49c04b000-7fc4a0000000 ---p 00000000 00:00 0 
+7fc4a0000000-7fc4a0032000 rw-p 00000000 00:00 0 
+7fc4a0032000-7fc4a4000000 ---p 00000000 00:00 0 
+7fc4a4000000-7fc4a4021000 rw-p 00000000 00:00 0 
+7fc4a4021000-7fc4a8000000 ---p 00000000 00:00 0 
+7fc4a8000000-7fc4a8021000 rw-p 00000000 00:00 0 
+7fc4a8021000-7fc4ac000000 ---p 00000000 00:00 0 
+7fc4ac000000-7fc4ac022000 rw-p 00000000 00:00 0 
+7fc4ac022000-7fc4b0000000 ---p 00000000 00:00 0 
+7fc4b000a000-7fc4b0014000 r--s 00069000 08:08 9971463                    /home/souvik/COMSOL43/plugins/org.eclipse.search_3.7.0.v20110505-0800.jar
+7fc4b0014000-7fc4b001f000 r--s 00072000 08:08 9971614                    /home/souvik/COMSOL43/plugins/org.eclipse.help.ui_3.5.101.r37_20110819.jar
+7fc4b001f000-7fc4b0059000 r-xp 00000000 08:08 11541633                   /home/souvik/COMSOL43/lib/glnxa64/libintlc.so.5
+7fc4b0059000-7fc4b0158000 ---p 0003a000 08:08 11541633                   /home/souvik/COMSOL43/lib/glnxa64/libintlc.so.5
+7fc4b0158000-7fc4b015b000 rw-p 00039000 08:08 11541633                   /home/souvik/COMSOL43/lib/glnxa64/libintlc.so.5
+7fc4b015b000-7fc4b015c000 rw-p 00000000 00:00 0 
+7fc4b015c000-7fc4b03ab000 r-xp 00000000 08:08 11541658                   /home/souvik/COMSOL43/lib/glnxa64/libimf.so
+7fc4b03ab000-7fc4b04aa000 ---p 0024f000 08:08 11541658                   /home/souvik/COMSOL43/lib/glnxa64/libimf.so
+7fc4b04aa000-7fc4b04af000 rw-p 0024e000 08:08 11541658                   /home/souvik/COMSOL43/lib/glnxa64/libimf.so
+7fc4b04af000-7fc4b04b0000 r-xp 00000000 08:08 11541631                   /home/souvik/COMSOL43/lib/glnxa64/libcsdynload.so
+7fc4b04b0000-7fc4b05af000 ---p 00001000 08:08 11541631                   /home/souvik/COMSOL43/lib/glnxa64/libcsdynload.so
+7fc4b05af000-7fc4b05b0000 rw-p 00000000 08:08 11541631                   /home/souvik/COMSOL43/lib/glnxa64/libcsdynload.so
+7fc4b05b0000-7fc4b05b3000 ---p 00000000 00:00 0 
+7fc4b05b3000-7fc4b09b1000 rwxp 00000000 00:00 0 
+7fc4b09b1000-7fc4b09b4000 ---p 00000000 00:00 0 
+7fc4b09b4000-7fc4b0db2000 rwxp 00000000 00:00 0 
+7fc4b0db2000-7fc4b0db5000 ---p 00000000 00:00 0 
+7fc4b0db5000-7fc4b11b3000 rwxp 00000000 00:00 0 
+7fc4b11b3000-7fc4b1231000 r-xp 00000000 08:08 13241647                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libfontmanager.so
+7fc4b1231000-7fc4b1330000 ---p 0007e000 08:08 13241647                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libfontmanager.so
+7fc4b1330000-7fc4b1346000 rw-p 0007d000 08:08 13241647                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libfontmanager.so
+7fc4b1346000-7fc4b1357000 rw-p 00000000 00:00 0 
+7fc4b1357000-7fc4b135c000 r-xp 00000000 08:07 1071926                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc4b135c000-7fc4b155b000 ---p 00005000 08:07 1071926                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc4b155b000-7fc4b155c000 r--p 00004000 08:07 1071926                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc4b155c000-7fc4b155d000 rw-p 00005000 08:07 1071926                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fc4b155d000-7fc4b159f000 r-xp 00000000 08:08 13241644                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/xawt/libmawt.so
+7fc4b159f000-7fc4b169e000 ---p 00042000 08:08 13241644                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/xawt/libmawt.so
+7fc4b169e000-7fc4b16a9000 rw-p 00041000 08:08 13241644                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/xawt/libmawt.so
+7fc4b16a9000-7fc4b16ab000 rw-p 00000000 00:00 0 
+7fc4b16ab000-7fc4b173d000 r-xp 00000000 08:08 13241638                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libawt.so
+7fc4b173d000-7fc4b183c000 ---p 00092000 08:08 13241638                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libawt.so
+7fc4b183c000-7fc4b1855000 rw-p 00091000 08:08 13241638                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libawt.so
+7fc4b1855000-7fc4b187a000 rw-p 00000000 00:00 0 
+7fc4b187a000-7fc4b1885000 r-xp 00000000 08:08 11541651                   /home/souvik/COMSOL43/lib/glnxa64/libcssystemutil.so
+7fc4b1885000-7fc4b1985000 ---p 0000b000 08:08 11541651                   /home/souvik/COMSOL43/lib/glnxa64/libcssystemutil.so
+7fc4b1985000-7fc4b1986000 rw-p 0000b000 08:08 11541651                   /home/souvik/COMSOL43/lib/glnxa64/libcssystemutil.so
+7fc4b1986000-7fc4b1987000 rw-p 00000000 00:00 0 
+7fc4b198f000-7fc4b19ac000 rw-s 1aea7d000 00:05 10453                     /dev/nvidia0
+7fc4b19ac000-7fc4b19af000 ---p 00000000 00:00 0 
+7fc4b19af000-7fc4b1dad000 rwxp 00000000 00:00 0 
+7fc4b1db0000-7fc4b1db9000 r--s 0003b000 08:08 9971437                    /home/souvik/COMSOL43/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar
+7fc4b1db9000-7fc4b1dbd000 rw-s b4afc000 00:05 10453                      /dev/nvidia0
+7fc4b1dbd000-7fc4b1e04000 r--s 003b2000 08:08 9971508                    /home/souvik/COMSOL43/plugins/org.eclipse.ui.workbench_3.7.0.I20110519-0100.jar
+7fc4b1e04000-7fc4b1e0c000 r--s 00098000 08:08 9971609                    /home/souvik/COMSOL43/plugins/com.comsol.migration_1.0.0.jar
+7fc4b1e0c000-7fc4b1e31000 r--s 0036b000 08:08 9971522                    /home/souvik/COMSOL43/plugins/com.comsol.resources_1.0.0.jar
+7fc4b1e31000-7fc4b1e3d000 r--s 0005e000 08:08 9971597                    /home/souvik/COMSOL43/plugins/org.eclipse.net4j.util_2.0.1.v20100116-1932.jar
+7fc4b1e3d000-7fc4b1e48000 r--s 000bb000 08:08 9971464                    /home/souvik/COMSOL43/plugins/org.eclipse.core.resources_3.7.100.v20110510-0712.jar
+7fc4b1e48000-7fc4b1e57000 r--s 000f3000 08:08 9971580                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.ecore_2.5.0.v200906151043.jar
+7fc4b1e57000-7fc4b1e6c000 r--s 00121000 08:08 9971598                    /home/souvik/COMSOL43/plugins/com.comsol.guimph_1.0.0.jar
+7fc4b1e6c000-7fc4b1e6d000 r--s 00000000 08:07 1969751                    /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le64.cache-3
+7fc4b1e6d000-7fc4b1e76000 r--s 00000000 08:07 1969750                    /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-3
+7fc4b1e76000-7fc4b1e78000 r--s 00000000 08:07 1969748                    /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le64.cache-3
+7fc4b1e78000-7fc4b1e7c000 r--s 00000000 08:07 1969747                    /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le64.cache-3
+7fc4b1e7c000-7fc4b1e7d000 r--s 00000000 08:07 1969746                    /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le64.cache-3
+7fc4b1e7d000-7fc4b1e7e000 r--s 00000000 08:07 1969745                    /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le64.cache-3
+7fc4b1e7e000-7fc4b1e84000 r--s 00000000 08:07 1969744                    /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le64.cache-3
+7fc4b1e84000-7fc4b1e88000 r--s 00000000 08:07 1969743                    /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le64.cache-3
+7fc4b1e88000-7fc4b1e98000 r--s 00000000 08:07 1969742                    /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le64.cache-3
+7fc4b1e98000-7fc4b1ecd000 r--s 0029c000 08:08 9971560                    /home/souvik/COMSOL43/plugins/com.comsol.model_1.0.0.jar
+7fc4b1ecd000-7fc4b1ed3000 r--s 00042000 08:08 9971434                    /home/souvik/COMSOL43/plugins/com.comsol.bfc_1.0.0.jar
+7fc4b1ed3000-7fc4b1ed8000 r--s 00020000 08:08 9971592                    /home/souvik/COMSOL43/plugins/com.comsol.clientserver_1.0.0.jar
+7fc4b1ed8000-7fc4b1edc000 r--s 0002a000 08:08 9971534                    /home/souvik/COMSOL43/plugins/com.comsol.guiappl_1.0.0.jar
+7fc4b1edc000-7fc4b1ee7000 r--s 0006f000 08:08 9971567                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.cdo_2.0.2.v20100615-0645.jar
+7fc4b1ee7000-7fc4b1ef0000 r--s 00040000 08:08 9971504                    /home/souvik/COMSOL43/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar
+7fc4b1ef0000-7fc4b1f04000 r--s 000f3000 08:08 9971461                    /home/souvik/COMSOL43/plugins/org.eclipse.jface_3.7.0.I20110522-1430.jar
+7fc4b1f04000-7fc4b1f12000 r--s 000f8000 08:08 9971551                    /home/souvik/COMSOL43/plugins/com.comsol.post_1.0.0.jar
+7fc4b1f12000-7fc4b1f16000 rw-s 03f49000 00:05 10453                      /dev/nvidia0
+7fc4b1f16000-7fc4b1f1c000 r--s 0002c000 08:08 9971523                    /home/souvik/COMSOL43/plugins/com.comsol.widgets.swt_1.0.0.jar
+7fc4b1f1c000-7fc4b1f21000 r--s 00021000 08:08 9971490                    /home/souvik/COMSOL43/plugins/org.eclipse.ui_3.7.0.I20110602-0100.jar
+7fc4b1f21000-7fc4b1f5d000 r--s 00626000 08:08 9971596                    /home/souvik/COMSOL43/plugins/com.ibm.icu_4.4.2.v20110208.jar
+7fc4b1f5d000-7fc4b1f71000 r--s 0024b000 08:08 9971428                    /home/souvik/COMSOL43/plugins/org.eclipse.swt.gtk.linux.x86_64_3.7.1.v3738a.jar
+7fc4b1f71000-7fc4b1f76000 r--s 00034000 08:08 9971604                    /home/souvik/COMSOL43/plugins/com.comsol.guigeommesh_1.0.0.jar
+7fc4b1f76000-7fc4b1f7c000 r--s 0004a000 08:08 9971494                    /home/souvik/COMSOL43/plugins/com.comsol.core_1.0.0.jar
+7fc4b1f7c000-7fc4b1f7f000 r--s 00027000 08:08 13241528                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/ext/sunjce_provider.jar
+7fc4b1f7f000-7fc4b1f86000 r--s 00083000 08:08 13241565                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/jsse.jar
+7fc4b1f86000-7fc4b1f92000 r--s 00082000 08:08 9971549                    /home/souvik/COMSOL43/plugins/com.comsol.model.edit_1.0.0.jar
+7fc4b1f92000-7fc4b1fa0000 r--s 00110000 08:08 9971405                    /home/souvik/COMSOL43/plugins/com.comsol.design_1.0.0.jar
+7fc4b1fa0000-7fc4b1fa3000 ---p 00000000 00:00 0 
+7fc4b1fa3000-7fc4b23a1000 rwxp 00000000 00:00 0 
+7fc4b23a1000-7fc4b23a4000 ---p 00000000 00:00 0 
+7fc4b23a4000-7fc4b27a2000 rwxp 00000000 00:00 0 
+7fc4b27a2000-7fc4b27a5000 ---p 00000000 00:00 0 
+7fc4b27a5000-7fc4b2ba3000 rwxp 00000000 00:00 0 
+7fc4b2ba3000-7fc4b2ba6000 ---p 00000000 00:00 0 
+7fc4b2ba6000-7fc4b2fa4000 rwxp 00000000 00:00 0 
+7fc4b2fa4000-7fc4b2fa7000 ---p 00000000 00:00 0 
+7fc4b2fa7000-7fc4b33a5000 rwxp 00000000 00:00 0 
+7fc4b33a5000-7fc4b33a8000 r-xp 00000000 08:07 1308986                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
+7fc4b33a8000-7fc4b35a8000 ---p 00003000 08:07 1308986                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
+7fc4b35a8000-7fc4b35a9000 r--p 00003000 08:07 1308986                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
+7fc4b35a9000-7fc4b35aa000 rw-p 00004000 08:07 1308986                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
+7fc4b35aa000-7fc4b35b0000 r-xp 00000000 08:07 1054590                    /usr/lib/x86_64-linux-gnu/libogg.so.0.7.1
+7fc4b35b0000-7fc4b37af000 ---p 00006000 08:07 1054590                    /usr/lib/x86_64-linux-gnu/libogg.so.0.7.1
+7fc4b37af000-7fc4b37b0000 r--p 00005000 08:07 1054590                    /usr/lib/x86_64-linux-gnu/libogg.so.0.7.1
+7fc4b37b0000-7fc4b37b1000 rw-p 00006000 08:07 1054590                    /usr/lib/x86_64-linux-gnu/libogg.so.0.7.1
+7fc4b37b1000-7fc4b37dc000 r-xp 00000000 08:07 1054748                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7fc4b37dc000-7fc4b39db000 ---p 0002b000 08:07 1054748                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7fc4b39db000-7fc4b39dc000 r--p 0002a000 08:07 1054748                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7fc4b39dc000-7fc4b39dd000 rw-p 0002b000 08:07 1054748                    /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+7fc4b39dd000-7fc4b39e5000 r-xp 00000000 08:07 1054547                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.0
+7fc4b39e5000-7fc4b3be5000 ---p 00008000 08:07 1054547                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.0
+7fc4b3be5000-7fc4b3be6000 r--p 00008000 08:07 1054547                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.0
+7fc4b3be6000-7fc4b3be7000 rw-p 00009000 08:07 1054547                    /usr/lib/x86_64-linux-gnu/libltdl.so.7.3.0
+7fc4b3be7000-7fc4b3bf7000 r-xp 00000000 08:07 1054715                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.2.9
+7fc4b3bf7000-7fc4b3df6000 ---p 00010000 08:07 1054715                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.2.9
+7fc4b3df6000-7fc4b3df7000 r--p 0000f000 08:07 1054715                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.2.9
+7fc4b3df7000-7fc4b3df8000 rw-p 00010000 08:07 1054715                    /usr/lib/x86_64-linux-gnu/libtdb.so.1.2.9
+7fc4b3df8000-7fc4b3dff000 r-xp 00000000 08:07 1054752                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.4
+7fc4b3dff000-7fc4b3ffe000 ---p 00007000 08:07 1054752                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.4
+7fc4b3ffe000-7fc4b3fff000 r--p 00006000 08:07 1054752                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.4
+7fc4b3fff000-7fc4b4000000 rw-p 00007000 08:07 1054752                    /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.4
+7fc4b4000000-7fc4b4021000 rw-p 00000000 00:00 0 
+7fc4b4021000-7fc4b8000000 ---p 00000000 00:00 0 
+7fc4b8001000-7fc4b8006000 r--s 00024000 08:08 9971436                    /home/souvik/COMSOL43/plugins/com.comsol.xfiles_1.0.0.jar
+7fc4b8006000-7fc4b800b000 r--s 0003b000 08:08 9971561                    /home/souvik/COMSOL43/plugins/com.comsol.nativemph_1.0.0.jar
+7fc4b800b000-7fc4b8011000 r--s 0009a000 08:08 9971544                    /home/souvik/COMSOL43/plugins/com.comsol.geommesh_1.0.0.jar
+7fc4b8011000-7fc4b801c000 r--s 0006e000 08:08 9971552                    /home/souvik/COMSOL43/plugins/truezip-6.jar
+7fc4b801c000-7fc4b8020000 r--s 00038000 08:08 9971423                    /home/souvik/COMSOL43/plugins/org.eclipse.net4j_2.0.1.v20100116-1932.jar
+7fc4b8020000-7fc4b8024000 r--s 00029000 08:08 9971519                    /home/souvik/COMSOL43/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar
+7fc4b8025000-7fc4b802b000 r--s 00044000 08:08 9971601                    /home/souvik/COMSOL43/plugins/org.eclipse.ui.forms_3.5.100.v20110425.jar
+7fc4b802b000-7fc4b8031000 r--s 00088000 08:08 9971431                    /home/souvik/COMSOL43/plugins/com.comsol.maxwell_1.0.0.jar
+7fc4b8031000-7fc4b8035000 r--s 0005d000 08:08 9971585                    /home/souvik/COMSOL43/plugins/com.comsol.physics_1.0.0.jar
+7fc4b8037000-7fc4b803a000 r--s 00013000 08:08 13241552                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/jce.jar
+7fc4b803a000-7fc4b8040000 r--s 00091000 08:08 9971541                    /home/souvik/COMSOL43/plugins/com.comsol.solver_1.0.0.jar
+7fc4b8040000-7fc4b8046000 r--s 00038000 08:08 9971424                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.cdo.common_2.0.2.v20100615-0645-patched.jar
+7fc4b8046000-7fc4b8048000 r--s 0000b000 08:08 9971422                    /home/souvik/COMSOL43/plugins/org.eclipse.net4j.tcp_2.0.1.v20090627-1154.jar
+7fc4b8048000-7fc4b804b000 r--s 00014000 08:08 9971524                    /home/souvik/COMSOL43/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar
+7fc4b804b000-7fc4b804e000 r--s 00014000 08:08 9971500                    /home/souvik/COMSOL43/plugins/org.eclipse.core.jobs_3.5.100.v20110404.jar
+7fc4b804e000-7fc4b8055000 r--s 0003b000 08:08 9971492                    /home/souvik/COMSOL43/plugins/com.comsol.nativeutil_1.0.0.jar
+7fc4b8055000-7fc4b8059000 r--s 00018000 08:08 9971543                    /home/souvik/COMSOL43/plugins/com.comsol.nativejni_1.0.0.jar
+7fc4b8059000-7fc4b805b000 r--s 0000c000 08:08 9971555                    /home/souvik/COMSOL43/plugins/com.comsol.gui_1.0.0.jar
+7fc4b805b000-7fc4b805c000 r--s 00002000 08:08 9971589                    /home/souvik/COMSOL43/plugins/com.comsol.logger_1.0.0.jar
+7fc4b805c000-7fc4b805f000 r--s 00000000 08:07 1969741                    /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le64.cache-3
+7fc4b805f000-7fc4b8060000 r--s 00000000 08:07 1969740                    /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-3
+7fc4b8060000-7fc4b8063000 r--s 00000000 08:07 1969739                    /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le64.cache-3
+7fc4b8063000-7fc4b8068000 r--s 00000000 08:07 1969738                    /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le64.cache-3
+7fc4b8068000-7fc4b8069000 r--s 00000000 08:07 1969737                    /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le64.cache-3
+7fc4b8069000-7fc4b806a000 r--s 00000000 08:07 1969736                    /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le64.cache-3
+7fc4b806a000-7fc4b806f000 r--s 00000000 08:07 1969735                    /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le64.cache-3
+7fc4b806f000-7fc4b807f000 r--s 00000000 08:07 1969734                    /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-3
+7fc4b807f000-7fc4b8088000 r--s 00000000 08:07 1972149                    /var/cache/fontconfig/cabbd14511b9e8a55e92af97fb3a0461-le64.cache-3
+7fc4b8088000-7fc4b8093000 r--s 00000000 08:07 1969721                    /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-3
+7fc4b8093000-7fc4b8097000 r--s 00000000 08:07 1969733                    /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-3
+7fc4b8097000-7fc4b809e000 r--s 0005b000 08:08 9971515                    /home/souvik/COMSOL43/plugins/com.comsol.util_1.0.0.jar
+7fc4b809e000-7fc4b809f000 r--s 00000000 08:08 9971473                    /home/souvik/COMSOL43/plugins/com.comsol.init_1.0.0.jar
+7fc4b809f000-7fc4b80a1000 r--s 00015000 08:08 9971566                    /home/souvik/COMSOL43/plugins/org.eclipse.core.runtime.compatibility_3.2.100.v20100505.jar
+7fc4b80a1000-7fc4b80a3000 r--s 00010000 08:08 9971510                    /home/souvik/COMSOL43/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar
+7fc4b80a3000-7fc4b80a5000 r--s 00013000 08:08 9971625                    /home/souvik/COMSOL43/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar
+7fc4b80a7000-7fc4b80aa000 r--s 00019000 08:08 9971619                    /home/souvik/COMSOL43/plugins/org.eclipse.equinox.preferences_3.4.1.R37x_v20110725.jar
+7fc4b80aa000-7fc4b80ac000 r--s 00018000 08:08 9971618                    /home/souvik/COMSOL43/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar
+7fc4b80ac000-7fc4b80c1000 r--s 001eb000 08:08 9971594                    /home/souvik/COMSOL43/plugins/com.comsol.transport_1.0.0.jar
+7fc4b80c1000-7fc4b80cf000 r--s 000a6000 08:08 9971426                    /home/souvik/COMSOL43/plugins/org.eclipse.compare_3.5.201.R37x_v20110817-0800.jar
+7fc4b80d2000-7fc4b80d4000 r--s 0000a000 08:08 9971516                    /home/souvik/COMSOL43/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar
+7fc4b80d4000-7fc4b80d7000 r--s 0001f000 08:08 9971443                    /home/souvik/COMSOL43/plugins/com.comsol.guidesign_1.0.0.jar
+7fc4b80d7000-7fc4b80de000 r-xp 00000000 08:08 13241617                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libnio.so
+7fc4b80de000-7fc4b81dd000 ---p 00007000 08:08 13241617                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libnio.so
+7fc4b81dd000-7fc4b81df000 rw-p 00006000 08:08 13241617                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libnio.so
+7fc4b81df000-7fc4b81ee000 r-xp 00000000 08:07 1054285                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7fc4b81ee000-7fc4b83ed000 ---p 0000f000 08:07 1054285                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7fc4b83ed000-7fc4b83ee000 r--p 0000e000 08:07 1054285                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7fc4b83ee000-7fc4b83ef000 rw-p 0000f000 08:07 1054285                    /usr/lib/x86_64-linux-gnu/libcanberra.so.0.2.5
+7fc4b83ef000-7fc4b83f3000 r-xp 00000000 08:07 1054281                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.8
+7fc4b83f3000-7fc4b85f2000 ---p 00004000 08:07 1054281                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.8
+7fc4b85f2000-7fc4b85f3000 r--p 00003000 08:07 1054281                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.8
+7fc4b85f3000-7fc4b85f4000 rw-p 00004000 08:07 1054281                    /usr/lib/x86_64-linux-gnu/libcanberra-gtk.so.0.1.8
+7fc4b85f4000-7fc4b85f9000 r-xp 00000000 08:07 1309163                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7fc4b85f9000-7fc4b87f8000 ---p 00005000 08:07 1309163                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7fc4b87f8000-7fc4b87f9000 r--p 00004000 08:07 1309163                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7fc4b87f9000-7fc4b87fa000 rw-p 00005000 08:07 1309163                    /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+7fc4b87fa000-7fc4b8829000 r-xp 00000000 08:07 1309142                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7fc4b8829000-7fc4b8a29000 ---p 0002f000 08:07 1309142                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7fc4b8a29000-7fc4b8a2a000 r--p 0002f000 08:07 1309142                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7fc4b8a2a000-7fc4b8a2b000 rw-p 00030000 08:07 1309142                    /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+7fc4b8a2b000-7fc4b8a2c000 ---p 00000000 00:00 0 
+7fc4b8a2c000-7fc4b922c000 rwxp 00000000 00:00 0 
+7fc4b922c000-7fc4b922d000 ---p 00000000 00:00 0 
+7fc4b922d000-7fc4b9a2d000 rwxp 00000000 00:00 0 
+7fc4b9a2d000-7fc4b9a34000 r-xp 00000000 08:07 1309008                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7fc4b9a34000-7fc4b9c33000 ---p 00007000 08:07 1309008                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7fc4b9c33000-7fc4b9c34000 r--p 00006000 08:07 1309008                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7fc4b9c34000-7fc4b9c35000 rw-p 00007000 08:07 1309008                    /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+7fc4b9c35000-7fc4b9c45000 r-xp 00000000 08:07 1049571                    /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+7fc4b9c45000-7fc4b9e44000 ---p 00010000 08:07 1049571                    /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+7fc4b9e44000-7fc4b9e45000 r--p 0000f000 08:07 1049571                    /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+7fc4b9e45000-7fc4b9e46000 rw-p 00010000 08:07 1049571                    /usr/lib/liboverlay-scrollbar-0.2.so.0.0.16
+7fc4b9e46000-7fc4b9e65000 r-xp 00000000 08:07 1054239                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20409.1
+7fc4b9e65000-7fc4ba065000 ---p 0001f000 08:07 1054239                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20409.1
+7fc4ba065000-7fc4ba067000 r--p 0001f000 08:07 1054239                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20409.1
+7fc4ba067000-7fc4ba068000 rw-p 00021000 08:07 1054239                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.20409.1
+7fc4ba068000-7fc4ba495000 r-xp 00000000 08:07 1054485                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+7fc4ba495000-7fc4ba695000 ---p 0042d000 08:07 1054485                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+7fc4ba695000-7fc4ba69c000 r--p 0042d000 08:07 1054485                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+7fc4ba69c000-7fc4ba6a0000 rw-p 00434000 08:07 1054485                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+7fc4ba6a0000-7fc4ba6a2000 rw-p 00000000 00:00 0 
+7fc4ba6a2000-7fc4ba6a7000 r-xp 00000000 08:07 1054191                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc4ba6a7000-7fc4ba8a6000 ---p 00005000 08:07 1054191                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc4ba8a6000-7fc4ba8a7000 r--p 00004000 08:07 1054191                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc4ba8a7000-7fc4ba8a8000 rw-p 00005000 08:07 1054191                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fc4ba8a8000-7fc4ba8aa000 r-xp 00000000 08:07 1054180                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc4ba8aa000-7fc4baaa9000 ---p 00002000 08:07 1054180                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc4baaa9000-7fc4baaaa000 r--p 00001000 08:07 1054180                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc4baaaa000-7fc4baaab000 rw-p 00002000 08:07 1054180                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fc4baaab000-7fc4baac8000 r-xp 00000000 08:07 1057612                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc4baac8000-7fc4bacc7000 ---p 0001d000 08:07 1057612                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc4bacc7000-7fc4bacc8000 r--p 0001c000 08:07 1057612                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc4bacc8000-7fc4bacc9000 rw-p 0001d000 08:07 1057612                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fc4bacc9000-7fc4bacd1000 r-xp 00000000 08:07 1066593                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fc4bacd1000-7fc4baed1000 ---p 00008000 08:07 1066593                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fc4baed1000-7fc4baed2000 r--p 00008000 08:07 1066593                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fc4baed2000-7fc4baed3000 rw-p 00009000 08:07 1066593                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fc4baed3000-7fc4baed5000 r-xp 00000000 08:07 1066595                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fc4baed5000-7fc4bb0d4000 ---p 00002000 08:07 1066595                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fc4bb0d4000-7fc4bb0d5000 r--p 00001000 08:07 1066595                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fc4bb0d5000-7fc4bb0d6000 rw-p 00002000 08:07 1066595                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fc4bb0d6000-7fc4bb0fb000 r-xp 00000000 08:08 10360387                   /home/souvik/matlab/bin/glnxa64/libpng12.so.0.39.0
+7fc4bb0fb000-7fc4bb2fa000 ---p 00025000 08:08 10360387                   /home/souvik/matlab/bin/glnxa64/libpng12.so.0.39.0
+7fc4bb2fa000-7fc4bb2fb000 rw-p 00024000 08:08 10360387                   /home/souvik/matlab/bin/glnxa64/libpng12.so.0.39.0
+7fc4bb2fb000-7fc4bb37c000 r-xp 00000000 08:07 1054622                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.24.4
+7fc4bb37c000-7fc4bb57b000 ---p 00081000 08:07 1054622                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.24.4
+7fc4bb57b000-7fc4bb581000 r--p 00080000 08:07 1054622                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.24.4
+7fc4bb581000-7fc4bb582000 rw-p 00086000 08:07 1054622                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.24.4
+7fc4bb582000-7fc4bb5a8000 r-xp 00000000 08:08 10357889                   /home/souvik/matlab/bin/glnxa64/libexpat.so.1.5.0
+7fc4bb5a8000-7fc4bb7a7000 ---p 00026000 08:08 10357889                   /home/souvik/matlab/bin/glnxa64/libexpat.so.1.5.0
+7fc4bb7a7000-7fc4bb7aa000 rw-p 00025000 08:08 10357889                   /home/souvik/matlab/bin/glnxa64/libexpat.so.1.5.0
+7fc4bb7aa000-7fc4bb7c2000 r-xp 00000000 08:07 3270634                    /lib/x86_64-linux-gnu/libresolv-2.15.so
+7fc4bb7c2000-7fc4bb9c2000 ---p 00018000 08:07 3270634                    /lib/x86_64-linux-gnu/libresolv-2.15.so
+7fc4bb9c2000-7fc4bb9c3000 r--p 00018000 08:07 3270634                    /lib/x86_64-linux-gnu/libresolv-2.15.so
+7fc4bb9c3000-7fc4bb9c4000 rw-p 00019000 08:07 3270634                    /lib/x86_64-linux-gnu/libresolv-2.15.so
+7fc4bb9c4000-7fc4bb9c6000 rw-p 00000000 00:00 0 
+7fc4bb9c6000-7fc4bb9e3000 r-xp 00000000 08:07 3274192                    /lib/x86_64-linux-gnu/libselinux.so.1
+7fc4bb9e3000-7fc4bbbe2000 ---p 0001d000 08:07 3274192                    /lib/x86_64-linux-gnu/libselinux.so.1
+7fc4bbbe2000-7fc4bbbe3000 r--p 0001c000 08:07 3274192                    /lib/x86_64-linux-gnu/libselinux.so.1
+7fc4bbbe3000-7fc4bbbe4000 rw-p 0001d000 08:07 3274192                    /lib/x86_64-linux-gnu/libselinux.so.1
+7fc4bbbe4000-7fc4bbbe5000 rw-p 00000000 00:00 0 
+7fc4bbbe5000-7fc4bbbfb000 r-xp 00000000 08:07 3274215                    /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7fc4bbbfb000-7fc4bbdfa000 ---p 00016000 08:07 3274215                    /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7fc4bbdfa000-7fc4bbdfb000 r--p 00015000 08:07 3274215                    /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7fc4bbdfb000-7fc4bbdfc000 rw-p 00016000 08:07 3274215                    /lib/x86_64-linux-gnu/libz.so.1.2.3.4
+7fc4bbdfc000-7fc4bbdff000 r-xp 00000000 08:07 1054007                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3200.4
+7fc4bbdff000-7fc4bbffe000 ---p 00003000 08:07 1054007                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3200.4
+7fc4bbffe000-7fc4bbfff000 r--p 00002000 08:07 1054007                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3200.4
+7fc4bbfff000-7fc4bc000000 rw-p 00003000 08:07 1054007                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.3200.4
+7fc4bc000000-7fc4bc021000 rw-p 00000000 00:00 0 
+7fc4bc021000-7fc4c0000000 ---p 00000000 00:00 0 
+7fc4c0000000-7fc4c0021000 rw-p 00000000 00:00 0 
+7fc4c0021000-7fc4c4000000 ---p 00000000 00:00 0 
+7fc4c4000000-7fc4c6f3a000 rw-p 00000000 00:00 0 
+7fc4c6f3a000-7fc4c8000000 ---p 00000000 00:00 0 
+7fc4c8000000-7fc4c9ee6000 rw-p 00000000 00:00 0 
+7fc4c9ee6000-7fc4cc000000 ---p 00000000 00:00 0 
+7fc4cc000000-7fc4cc021000 rw-p 00000000 00:00 0 
+7fc4cc021000-7fc4d0000000 ---p 00000000 00:00 0 
+7fc4d0000000-7fc4d0001000 r--s 00001000 08:08 9971602                    /home/souvik/COMSOL43/plugins/com.comsol.swtext_1.0.0.jar
+7fc4d0001000-7fc4d0002000 r--s 00002000 08:08 9971532                    /home/souvik/COMSOL43/plugins/com.comsol.guiplasma_1.0.0.jar
+7fc4d0002000-7fc4d0006000 r--s 0003b000 08:08 9971512                    /home/souvik/COMSOL43/plugins/org.eclipse.help_3.5.100.v20110426.jar
+7fc4d0006000-7fc4d0007000 r--s 00002000 08:08 9971449                    /home/souvik/COMSOL43/plugins/com.comsol.guissf_1.0.0.jar
+7fc4d0007000-7fc4d000a000 r--s 0001d000 08:08 9971503                    /home/souvik/COMSOL43/plugins/org.apache.commons.el_1.0.0.v201101211617.jar
+7fc4d000a000-7fc4d000d000 r--s 0001e000 08:08 9971617                    /home/souvik/COMSOL43/plugins/com.comsol.batch_1.0.0.jar
+7fc4d000d000-7fc4d000f000 r--s 00013000 08:08 9971413                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar
+7fc4d000f000-7fc4d0012000 r--s 00019000 08:08 9971613                    /home/souvik/COMSOL43/plugins/org.eclipse.core.filebuffers_3.5.200.v20110505-0800.jar
+7fc4d0012000-7fc4d0013000 r--s 00002000 08:08 10756880                   /home/souvik/.comsol/v43/configuration/comsol/org.eclipse.osgi/bundles/131/1/.cp/runtime_registry_compatibility.jar
+7fc4d0013000-7fc4d0015000 r--s 00594000 08:08 9971622                    /home/souvik/COMSOL43/plugins/com.comsol.rf_1.0.0.jar
+7fc4d001d000-7fc4d0022000 r--s 0003b000 08:08 9971548                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.edit_2.5.0.v200906151043.jar
+7fc4d0028000-7fc4d002c000 r--s 00013000 08:08 9971610                    /home/souvik/COMSOL43/plugins/org.eclipse.ui.views_3.6.0.I20110412-0800.jar
+7fc4d002c000-7fc4d0039000 r--s 00066000 08:08 9971623                    /home/souvik/COMSOL43/plugins/com.comsol.widgets_1.0.0.jar
+7fc4d0039000-7fc4d003c000 r--s 0001c000 08:08 9971444                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.common.ui_2.5.0.v200906151043.jar
+7fc4d003c000-7fc4d003d000 r--s 00001000 08:08 9971408                    /home/souvik/COMSOL43/plugins/com.comsol.guirf_1.0.0.jar
+7fc4d003d000-7fc4d003f000 r--s 00139000 08:08 9971588                    /home/souvik/COMSOL43/plugins/com.comsol.microfluidics_1.0.0.jar
+7fc4d0041000-7fc4d0045000 r--s 00024000 08:08 9971420                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.edit.ui_2.5.0.v200906151043.jar
+7fc4d0045000-7fc4d0048000 r--s 00013000 08:08 9971430                    /home/souvik/COMSOL43/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar
+7fc4d0048000-7fc4d0049000 rw-p 00000000 00:00 0 
+7fc4d0049000-7fc4d004c000 rw-s 00000000 00:04 28803096                   /SYSV00000000 (deleted)
+7fc4d004c000-7fc4d004d000 rw-p 00000000 00:00 0 
+7fc4d004d000-7fc4d004e000 rw-s d0005000 00:05 10453                      /dev/nvidia0
+7fc4d004e000-7fc4d004f000 rw-s af20d000 00:05 10453                      /dev/nvidia0
+7fc4d004f000-7fc4d0059000 r--s 000c3000 08:08 9971624                    /home/souvik/COMSOL43/plugins/com.comsol.solid_1.0.0.jar
+7fc4d0059000-7fc4d005b000 r--s 00003000 08:08 9971505                    /home/souvik/COMSOL43/plugins/com.comsol.editor_1.0.0.jar
+7fc4d005b000-7fc4d005c000 rw-s fac0c000 00:05 10453                      /dev/nvidia0
+7fc4d005c000-7fc4d005d000 rw-s fac0a000 00:05 10453                      /dev/nvidia0
+7fc4d005d000-7fc4d005e000 rw-s fa641000 00:05 10453                      /dev/nvidia0
+7fc4d005e000-7fc4d005f000 rw-s 1ae094000 00:05 10453                     /dev/nvidia0
+7fc4d005f000-7fc4d0061000 r--s 00003000 08:08 9971480                    /home/souvik/COMSOL43/plugins/com.comsol.guibatch_1.0.0.jar
+7fc4d0061000-7fc4d006a000 r--s 00080000 08:08 9971525                    /home/souvik/COMSOL43/plugins/com.comsol.applapi_1.0.0.jar
+7fc4d006a000-7fc4d007d000 r-xp 00000000 08:08 13241613                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libnet.so
+7fc4d007d000-7fc4d017e000 ---p 00013000 08:08 13241613                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libnet.so
+7fc4d017e000-7fc4d0181000 rw-p 00014000 08:08 13241613                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libnet.so
+7fc4d0181000-7fc4d01e1000 rw-s 00000000 00:04 28737559                   /SYSV00000000 (deleted)
+7fc4d01e1000-7fc4d025b000 r-xp 00000000 08:08 10361216                   /home/souvik/matlab/bin/glnxa64/libfreetype.so.6.3.16
+7fc4d025b000-7fc4d045b000 ---p 0007a000 08:08 10361216                   /home/souvik/matlab/bin/glnxa64/libfreetype.so.6.3.16
+7fc4d045b000-7fc4d0460000 rw-p 0007a000 08:08 10361216                   /home/souvik/matlab/bin/glnxa64/libfreetype.so.6.3.16
+7fc4d0460000-7fc4d0489000 r-xp 00000000 08:07 1054933                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3000.0
+7fc4d0489000-7fc4d0688000 ---p 00029000 08:07 1054933                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3000.0
+7fc4d0688000-7fc4d0689000 r--p 00028000 08:07 1054933                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3000.0
+7fc4d0689000-7fc4d068a000 rw-p 00029000 08:07 1054933                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.3000.0
+7fc4d068a000-7fc4d07ba000 r-xp 00000000 08:07 1057616                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc4d07ba000-7fc4d09ba000 ---p 00130000 08:07 1057616                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc4d09ba000-7fc4d09bb000 r--p 00130000 08:07 1057616                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc4d09bb000-7fc4d09bf000 rw-p 00131000 08:07 1057616                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fc4d09bf000-7fc4d0a78000 r-xp 00000000 08:07 1047812                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11000.2
+7fc4d0a78000-7fc4d0c77000 ---p 000b9000 08:07 1047812                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11000.2
+7fc4d0c77000-7fc4d0c79000 r--p 000b8000 08:07 1047812                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11000.2
+7fc4d0c79000-7fc4d0c7a000 rw-p 000ba000 08:07 1047812                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11000.2
+7fc4d0c7a000-7fc4d0c7d000 rw-p 00000000 00:00 0 
+7fc4d0c7d000-7fc4d0c82000 r-xp 00000000 08:07 1070900                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4d0c82000-7fc4d0e81000 ---p 00005000 08:07 1070900                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4d0e81000-7fc4d0e82000 r--p 00004000 08:07 1070900                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4d0e82000-7fc4d0e83000 rw-p 00005000 08:07 1070900                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fc4d0e83000-7fc4d0e85000 r-xp 00000000 08:07 1054189                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fc4d0e85000-7fc4d1084000 ---p 00002000 08:07 1054189                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fc4d1084000-7fc4d1085000 r--p 00001000 08:07 1054189                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fc4d1085000-7fc4d1086000 rw-p 00002000 08:07 1054189                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fc4d1086000-7fc4d1088000 r-xp 00000000 08:07 1054185                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fc4d1088000-7fc4d1287000 ---p 00002000 08:07 1054185                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fc4d1287000-7fc4d1288000 r--p 00001000 08:07 1054185                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fc4d1288000-7fc4d1289000 rw-p 00002000 08:07 1054185                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fc4d1289000-7fc4d1292000 r-xp 00000000 08:07 1066776                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4d1292000-7fc4d1491000 ---p 00009000 08:07 1066776                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4d1491000-7fc4d1492000 r--p 00008000 08:07 1066776                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4d1492000-7fc4d1493000 rw-p 00009000 08:07 1066776                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fc4d1493000-7fc4d149a000 r-xp 00000000 08:07 1066782                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fc4d149a000-7fc4d1699000 ---p 00007000 08:07 1066782                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fc4d1699000-7fc4d169a000 r--p 00006000 08:07 1066782                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fc4d169a000-7fc4d169b000 rw-p 00007000 08:07 1066782                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fc4d169b000-7fc4d16a9000 r-xp 00000000 08:07 1066778                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc4d16a9000-7fc4d18a8000 ---p 0000e000 08:07 1066778                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc4d18a8000-7fc4d18a9000 r--p 0000d000 08:07 1066778                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc4d18a9000-7fc4d18aa000 rw-p 0000e000 08:07 1066778                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fc4d18aa000-7fc4d18ac000 r-xp 00000000 08:07 1066780                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fc4d18ac000-7fc4d1aab000 ---p 00002000 08:07 1066780                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fc4d1aab000-7fc4d1aac000 r--p 00001000 08:07 1066780                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fc4d1aac000-7fc4d1aad000 rw-p 00002000 08:07 1066780                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fc4d1aad000-7fc4d1ab6000 r-xp 00000000 08:07 1070800                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc4d1ab6000-7fc4d1cb5000 ---p 00009000 08:07 1070800                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc4d1cb5000-7fc4d1cb6000 r--p 00008000 08:07 1070800                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc4d1cb6000-7fc4d1cb7000 rw-p 00009000 08:07 1070800                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fc4d1cb7000-7fc4d1cc7000 r-xp 00000000 08:07 1066109                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc4d1cc7000-7fc4d1ec6000 ---p 00010000 08:07 1066109                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc4d1ec6000-7fc4d1ec7000 r--p 0000f000 08:07 1066109                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc4d1ec7000-7fc4d1ec8000 rw-p 00010000 08:07 1066109                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fc4d1ec8000-7fc4d1efc000 r-xp 00000000 08:07 1047110                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.4.4
+7fc4d1efc000-7fc4d20fc000 ---p 00034000 08:07 1047110                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.4.4
+7fc4d20fc000-7fc4d20fd000 r--p 00034000 08:07 1047110                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.4.4
+7fc4d20fd000-7fc4d20fe000 rw-p 00035000 08:07 1047110                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.4.4
+7fc4d20fe000-7fc4d2246000 r-xp 00000000 08:07 1055341                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3200.4
+7fc4d2246000-7fc4d2445000 ---p 00148000 08:07 1055341                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3200.4
+7fc4d2445000-7fc4d2449000 r--p 00147000 08:07 1055341                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3200.4
+7fc4d2449000-7fc4d244b000 rw-p 0014b000 08:07 1055341                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.3200.4
+7fc4d244b000-7fc4d244d000 rw-p 00000000 00:00 0 
+7fc4d244d000-7fc4d246b000 r-xp 00000000 08:07 1054392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+7fc4d246b000-7fc4d266b000 ---p 0001e000 08:07 1054392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+7fc4d266b000-7fc4d266c000 r--p 0001e000 08:07 1054392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+7fc4d266c000-7fc4d266d000 rw-p 0001f000 08:07 1054392                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.2600.1
+7fc4d266d000-7fc4d26b3000 r-xp 00000000 08:07 1055034                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3000.0
+7fc4d26b3000-7fc4d28b3000 ---p 00046000 08:07 1055034                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3000.0
+7fc4d28b3000-7fc4d28b5000 r--p 00046000 08:07 1055034                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3000.0
+7fc4d28b5000-7fc4d28b6000 rw-p 00048000 08:07 1055034                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.3000.0
+7fc4d28b6000-7fc4d28c1000 r-xp 00000000 08:07 1066428                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3000.0
+7fc4d28c1000-7fc4d2ac0000 ---p 0000b000 08:07 1066428                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3000.0
+7fc4d2ac0000-7fc4d2ac1000 r--p 0000a000 08:07 1066428                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3000.0
+7fc4d2ac1000-7fc4d2ac2000 rw-p 0000b000 08:07 1066428                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.3000.0
+7fc4d2ac2000-7fc4d2b6f000 r-xp 00000000 08:07 1054390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+7fc4d2b6f000-7fc4d2d6e000 ---p 000ad000 08:07 1054390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+7fc4d2d6e000-7fc4d2d72000 r--p 000ac000 08:07 1054390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+7fc4d2d72000-7fc4d2d74000 rw-p 000b0000 08:07 1054390                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.10
+7fc4d2d74000-7fc4d2db0000 r-xp 00000000 08:07 3274177                    /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7fc4d2db0000-7fc4d2faf000 ---p 0003c000 08:07 3274177                    /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7fc4d2faf000-7fc4d2fb0000 r--p 0003b000 08:07 3274177                    /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7fc4d2fb0000-7fc4d2fb1000 rw-p 0003c000 08:07 3274177                    /lib/x86_64-linux-gnu/libpcre.so.3.12.1
+7fc4d2fb1000-7fc4d2fb8000 r-xp 00000000 08:07 1054365                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.0
+7fc4d2fb8000-7fc4d31b7000 ---p 00007000 08:07 1054365                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.0
+7fc4d31b7000-7fc4d31b8000 r--p 00006000 08:07 1054365                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.0
+7fc4d31b8000-7fc4d31b9000 rw-p 00007000 08:07 1054365                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.0
+7fc4d31b9000-7fc4d32ab000 r-xp 00000000 08:07 3285712                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4
+7fc4d32ab000-7fc4d34ab000 ---p 000f2000 08:07 3285712                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4
+7fc4d34ab000-7fc4d34ac000 r--p 000f2000 08:07 3285712                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4
+7fc4d34ac000-7fc4d34ad000 rw-p 000f3000 08:07 3285712                    /lib/x86_64-linux-gnu/libglib-2.0.so.0.3200.4
+7fc4d34ad000-7fc4d34ae000 rw-p 00000000 00:00 0 
+7fc4d34ae000-7fc4d34fb000 r-xp 00000000 08:07 1055342                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3200.4
+7fc4d34fb000-7fc4d36fb000 ---p 0004d000 08:07 1055342                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3200.4
+7fc4d36fb000-7fc4d36fc000 r--p 0004d000 08:07 1055342                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3200.4
+7fc4d36fc000-7fc4d36fd000 rw-p 0004e000 08:07 1055342                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.3200.4
+7fc4d36fd000-7fc4d36fe000 ---p 00000000 00:00 0 
+7fc4d36fe000-7fc4d37fe000 rwxp 00000000 00:00 0 
+7fc4d37fe000-7fc4d3801000 ---p 00000000 00:00 0 
+7fc4d3801000-7fc4d3bff000 rwxp 00000000 00:00 0 
+7fc4d3bff000-7fc4d3c02000 ---p 00000000 00:00 0 
+7fc4d3c02000-7fc4d4000000 rwxp 00000000 00:00 0 
+7fc4d4000000-7fc4d4021000 rw-p 00000000 00:00 0 
+7fc4d4021000-7fc4d8000000 ---p 00000000 00:00 0 
+7fc4d8000000-7fc4d8021000 rw-p 00000000 00:00 0 
+7fc4d8021000-7fc4dc000000 ---p 00000000 00:00 0 
+7fc4dc000000-7fc4dc021000 rw-p 00000000 00:00 0 
+7fc4dc021000-7fc4e0000000 ---p 00000000 00:00 0 
+7fc4e0000000-7fc4e0077000 rw-p 00000000 00:00 0 
+7fc4e0077000-7fc4e4000000 ---p 00000000 00:00 0 
+7fc4e4000000-7fc4e4021000 rw-p 00000000 00:00 0 
+7fc4e4021000-7fc4e8000000 ---p 00000000 00:00 0 
+7fc4e8000000-7fc4e8021000 rw-p 00000000 00:00 0 
+7fc4e8021000-7fc4ec000000 ---p 00000000 00:00 0 
+7fc4ec000000-7fc4ec021000 rw-p 00000000 00:00 0 
+7fc4ec021000-7fc4f0000000 ---p 00000000 00:00 0 
+7fc4f0000000-7fc4f0001000 rw-s b3b8a000 00:05 10453                      /dev/nvidia0
+7fc4f0001000-7fc4f0002000 rw-s fa060000 00:05 10453                      /dev/nvidia0
+7fc4f0002000-7fc4f0006000 r--s 00017000 08:08 9971556                    /home/souvik/COMSOL43/plugins/org.eclipse.core.commands_3.6.0.I20110111-0800.jar
+7fc4f0006000-7fc4f0019000 r--s 0013a000 08:08 9971410                    /home/souvik/COMSOL43/plugins/org.eclipse.osgi_3.7.1.R37x_v20110808-1106.jar
+7fc4f0019000-7fc4f00a7000 rw-p 00000000 00:00 0 
+7fc4f00a7000-7fc4f00c5000 r--s 00000000 08:07 1320037                    /usr/share/mime/mime.cache
+7fc4f00c5000-7fc4f00e9000 r--p 00000000 08:07 1701105                    /usr/share/glib-2.0/schemas/gschemas.compiled
+7fc4f00e9000-7fc4f00ec000 ---p 00000000 00:00 0 
+7fc4f00ec000-7fc4f01ea000 rwxp 00000000 00:00 0 
+7fc4f01ea000-7fc4f01ed000 ---p 00000000 00:00 0 
+7fc4f01ed000-7fc4f02eb000 rwxp 00000000 00:00 0 
+7fc4f02eb000-7fc4f02ee000 ---p 00000000 00:00 0 
+7fc4f02ee000-7fc4f06ec000 rwxp 00000000 00:00 0 
+7fc4f06ec000-7fc4f06ef000 ---p 00000000 00:00 0 
+7fc4f06ef000-7fc4f0aed000 rwxp 00000000 00:00 0 
+7fc4f0aed000-7fc4f0aee000 ---p 00000000 00:00 0 
+7fc4f0aee000-7fc4f0bee000 rwxp 00000000 00:00 0 
+7fc4f0bee000-7fc4f1126000 rw-p 00000000 00:00 0 
+7fc4f1126000-7fc4f12bd000 r--s 02abf000 08:08 13242244                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/rt.jar
+7fc4f12bd000-7fc4f12e5000 rw-p 00000000 00:00 0 
+7fc4f12e5000-7fc4f12e6000 ---p 00000000 00:00 0 
+7fc4f12e6000-7fc4f13e6000 rwxp 00000000 00:00 0 
+7fc4f13e6000-7fc4f13e7000 ---p 00000000 00:00 0 
+7fc4f13e7000-7fc4f14e7000 rwxp 00000000 00:00 0 
+7fc4f14e7000-7fc4f14e8000 ---p 00000000 00:00 0 
+7fc4f14e8000-7fc4f15e8000 rwxp 00000000 00:00 0 
+7fc4f15e8000-7fc4f15e9000 ---p 00000000 00:00 0 
+7fc4f15e9000-7fc4f16e9000 rwxp 00000000 00:00 0 
+7fc4f16e9000-7fc4f170b000 rw-p 00000000 00:00 0 
+7fc4f170b000-7fc4f1769000 rw-p 00000000 00:00 0 
+7fc4f1769000-7fc4f177e000 rw-p 00000000 00:00 0 
+7fc4f177e000-7fc4f18bf000 rw-p 00000000 00:00 0 
+7fc4f18bf000-7fc4f18e1000 rw-p 00000000 00:00 0 
+7fc4f18e1000-7fc4f193f000 rw-p 00000000 00:00 0 
+7fc4f193f000-7fc4f1954000 rw-p 00000000 00:00 0 
+7fc4f1954000-7fc4f1a94000 rw-p 00000000 00:00 0 
+7fc4f1a94000-7fc4f1ad5000 rw-p 00000000 00:00 0 
+7fc4f1ad5000-7fc4f1b3f000 rw-p 00000000 00:00 0 
+7fc4f1b3f000-7fc4f5e70000 rw-p 00000000 00:00 0 
+7fc4f5e70000-7fc501b40000 rw-p 00000000 00:00 0 
+7fc501b40000-7fc504490000 rw-p 00000000 00:00 0 
+7fc504490000-7fc52c5f0000 rw-p 00000000 00:00 0 
+7fc52c5f0000-7fc534560000 rw-p 00000000 00:00 0 
+7fc534560000-7fc541b40000 rw-p 00000000 00:00 0 
+7fc541b40000-7fc541b42000 r--s 00008000 08:08 9971501                    /home/souvik/COMSOL43/plugins/org.eclipse.equinox.log_1.2.200.v20110502.jar
+7fc541b42000-7fc541b44000 r--s 00009000 08:08 9971477                    /home/souvik/COMSOL43/plugins/com.comsol.guiswt_1.0.0.jar
+7fc541b44000-7fc541b48000 r--s 00024000 08:08 9971414                    /home/souvik/COMSOL43/plugins/com.comsol.report_1.0.0.jar
+7fc541b48000-7fc541b49000 r--s 00004000 08:08 9971493                    /home/souvik/COMSOL43/plugins/org.eclipse.swt_3.7.1.v3738a.jar
+7fc541b49000-7fc541b4b000 r--s 00006000 08:08 9971569                    /home/souvik/COMSOL43/plugins/com.comsol.guimaxwell_1.0.0.jar
+7fc541b4b000-7fc541feb000 rwxp 00000000 00:00 0 
+7fc541feb000-7fc544b4b000 rw-p 00000000 00:00 0 
+7fc544b4b000-7fc544b59000 r-xp 00000000 08:08 13241610                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libzip.so
+7fc544b59000-7fc544c5b000 ---p 0000e000 08:08 13241610                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libzip.so
+7fc544c5b000-7fc544c5e000 rw-p 00010000 08:08 13241610                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libzip.so
+7fc544c5e000-7fc544c5f000 rw-p 00000000 00:00 0 
+7fc544c5f000-7fc544c6b000 r-xp 00000000 08:07 3270639                    /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7fc544c6b000-7fc544e6a000 ---p 0000c000 08:07 3270639                    /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7fc544e6a000-7fc544e6b000 r--p 0000b000 08:07 3270639                    /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7fc544e6b000-7fc544e6c000 rw-p 0000c000 08:07 3270639                    /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7fc544e6c000-7fc544e76000 r-xp 00000000 08:07 3270635                    /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7fc544e76000-7fc545076000 ---p 0000a000 08:07 3270635                    /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7fc545076000-7fc545077000 r--p 0000a000 08:07 3270635                    /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7fc545077000-7fc545078000 rw-p 0000b000 08:07 3270635                    /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7fc545078000-7fc545080000 r-xp 00000000 08:07 3270640                    /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7fc545080000-7fc54527f000 ---p 00008000 08:07 3270640                    /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7fc54527f000-7fc545280000 r--p 00007000 08:07 3270640                    /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7fc545280000-7fc545281000 rw-p 00008000 08:07 3270640                    /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7fc545281000-7fc545288000 r-xp 00000000 08:08 13241631                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+7fc545288000-7fc545389000 ---p 00007000 08:08 13241631                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+7fc545389000-7fc54538b000 rw-p 00008000 08:08 13241631                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/native_threads/libhpi.so
+7fc54538b000-7fc54538c000 rw-p 00000000 00:00 0 
+7fc54538c000-7fc5453a3000 r-xp 00000000 08:07 3270648                    /lib/x86_64-linux-gnu/libnsl-2.15.so
+7fc5453a3000-7fc5455a2000 ---p 00017000 08:07 3270648                    /lib/x86_64-linux-gnu/libnsl-2.15.so
+7fc5455a2000-7fc5455a3000 r--p 00016000 08:07 3270648                    /lib/x86_64-linux-gnu/libnsl-2.15.so
+7fc5455a3000-7fc5455a4000 rw-p 00017000 08:07 3270648                    /lib/x86_64-linux-gnu/libnsl-2.15.so
+7fc5455a4000-7fc5455a6000 rw-p 00000000 00:00 0 
+7fc5455a6000-7fc5455cf000 r-xp 00000000 08:08 13241600                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjava.so
+7fc5455cf000-7fc5456ce000 ---p 00029000 08:08 13241600                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjava.so
+7fc5456ce000-7fc5456d5000 rw-p 00028000 08:08 13241600                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjava.so
+7fc5456d5000-7fc5456e2000 r-xp 00000000 08:08 13241602                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libverify.so
+7fc5456e2000-7fc5457e1000 ---p 0000d000 08:08 13241602                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libverify.so
+7fc5457e1000-7fc5457e4000 rw-p 0000c000 08:08 13241602                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libverify.so
+7fc5457e4000-7fc5457eb000 r-xp 00000000 08:07 3270633                    /lib/x86_64-linux-gnu/librt-2.15.so
+7fc5457eb000-7fc5459ea000 ---p 00007000 08:07 3270633                    /lib/x86_64-linux-gnu/librt-2.15.so
+7fc5459ea000-7fc5459eb000 r--p 00006000 08:07 3270633                    /lib/x86_64-linux-gnu/librt-2.15.so
+7fc5459eb000-7fc5459ec000 rw-p 00007000 08:07 3270633                    /lib/x86_64-linux-gnu/librt-2.15.so
+7fc5459ec000-7fc545ae7000 r-xp 00000000 08:07 3270637                    /lib/x86_64-linux-gnu/libm-2.15.so
+7fc545ae7000-7fc545ce6000 ---p 000fb000 08:07 3270637                    /lib/x86_64-linux-gnu/libm-2.15.so
+7fc545ce6000-7fc545ce7000 r--p 000fa000 08:07 3270637                    /lib/x86_64-linux-gnu/libm-2.15.so
+7fc545ce7000-7fc545ce8000 rw-p 000fb000 08:07 3270637                    /lib/x86_64-linux-gnu/libm-2.15.so
+7fc545ce8000-7fc54649d000 r-xp 00000000 08:08 13241604                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/server/libjvm.so
+7fc54649d000-7fc54659c000 ---p 007b5000 08:08 13241604                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/server/libjvm.so
+7fc54659c000-7fc546727000 rw-p 007b4000 08:08 13241604                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/server/libjvm.so
+7fc546727000-7fc546760000 rw-p 00000000 00:00 0 
+7fc546760000-7fc546770000 r-xp 00000000 08:08 10098090                   /home/souvik/COMSOL43/bin/glnxa64/comsol_1312.so
+7fc546770000-7fc54686f000 ---p 00010000 08:08 10098090                   /home/souvik/COMSOL43/bin/glnxa64/comsol_1312.so
+7fc54686f000-7fc546871000 rw-p 0000f000 08:08 10098090                   /home/souvik/COMSOL43/bin/glnxa64/comsol_1312.so
+7fc546871000-7fc546a26000 r-xp 00000000 08:07 3270629                    /lib/x86_64-linux-gnu/libc-2.15.so
+7fc546a26000-7fc546c25000 ---p 001b5000 08:07 3270629                    /lib/x86_64-linux-gnu/libc-2.15.so
+7fc546c25000-7fc546c29000 r--p 001b4000 08:07 3270629                    /lib/x86_64-linux-gnu/libc-2.15.so
+7fc546c29000-7fc546c2b000 rw-p 001b8000 08:07 3270629                    /lib/x86_64-linux-gnu/libc-2.15.so
+7fc546c2b000-7fc546c30000 rw-p 00000000 00:00 0 
+7fc546c30000-7fc546c32000 r-xp 00000000 08:07 3270628                    /lib/x86_64-linux-gnu/libdl-2.15.so
+7fc546c32000-7fc546e32000 ---p 00002000 08:07 3270628                    /lib/x86_64-linux-gnu/libdl-2.15.so
+7fc546e32000-7fc546e33000 r--p 00002000 08:07 3270628                    /lib/x86_64-linux-gnu/libdl-2.15.so
+7fc546e33000-7fc546e34000 rw-p 00003000 08:07 3270628                    /lib/x86_64-linux-gnu/libdl-2.15.so
+7fc546e34000-7fc546e4c000 r-xp 00000000 08:07 3270631                    /lib/x86_64-linux-gnu/libpthread-2.15.so
+7fc546e4c000-7fc54704b000 ---p 00018000 08:07 3270631                    /lib/x86_64-linux-gnu/libpthread-2.15.so
+7fc54704b000-7fc54704c000 r--p 00017000 08:07 3270631                    /lib/x86_64-linux-gnu/libpthread-2.15.so
+7fc54704c000-7fc54704d000 rw-p 00018000 08:07 3270631                    /lib/x86_64-linux-gnu/libpthread-2.15.so
+7fc54704d000-7fc547051000 rw-p 00000000 00:00 0 
+7fc547051000-7fc547073000 r-xp 00000000 08:07 3270643                    /lib/x86_64-linux-gnu/ld-2.15.so
+7fc547073000-7fc547074000 r--s 00005000 08:08 9971496                    /home/souvik/COMSOL43/plugins/com.comsol.guisme_1.0.0.jar
+7fc547075000-7fc547078000 r--s 0001d000 08:08 9971478                    /home/souvik/COMSOL43/plugins/com.comsol.guipost_1.0.0.jar
+7fc547078000-7fc54707c000 r--s 00032000 08:08 9971550                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar
+7fc54707c000-7fc547080000 r--s 0002e000 08:08 9971590                    /home/souvik/COMSOL43/plugins/org.eclipse.emf.common_2.5.0.v200906151043.jar
+7fc547080000-7fc547082000 r--s 0000b000 08:08 9971432                    /home/souvik/COMSOL43/plugins/com.comsol.guicapeopen_1.0.0.0.jar
+7fc547082000-7fc547084000 r--s 0006d000 08:08 9971611                    /home/souvik/COMSOL43/plugins/com.comsol.ssf_1.0.0.jar
+7fc547084000-7fc547097000 rw-p 00000000 00:00 0 
+7fc547097000-7fc547144000 rw-p 00000000 00:00 0 
+7fc547144000-7fc547148000 rw-p 00000000 00:00 0 
+7fc547148000-7fc547149000 r--s 00001000 08:08 9971416                    /home/souvik/COMSOL43/plugins/com.comsol.comactivex_1.0.0.jar
+7fc547149000-7fc54714a000 r--s 00006000 08:08 9971627                    /home/souvik/COMSOL43/plugins/com.comsol.guisolver_1.0.0.jar
+7fc54714a000-7fc547150000 r--s 0000f000 08:08 9971628                    /home/souvik/COMSOL43/plugins/com.comsol.api_1.0.0.jar
+7fc547150000-7fc547151000 r--s 00004000 08:08 9971438                    /home/souvik/COMSOL43/plugins/com.comsol.systemutils_1.0.0.jar
+7fc547151000-7fc547154000 r--p 00000000 08:08 9702917                    /home/souvik/.config/dconf/user
+7fc547154000-7fc547155000 r--s 00000000 08:08 9702927                    /home/souvik/.cache/dconf/user
+7fc547155000-7fc54715c000 r--s 00000000 08:07 1328161                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7fc54715c000-7fc54715d000 r--s 00002000 08:08 9971630                    /home/souvik/COMSOL43/plugins/com.comsol.mli_1.0.0.jar
+7fc54715d000-7fc54715e000 r--s 00003000 08:08 9971452                    /home/souvik/COMSOL43/plugins/com.comsol.capeopen_1.0.0.0.jar
+7fc54715e000-7fc547160000 r--s 0000b000 08:08 9971456                    /home/souvik/COMSOL43/plugins/org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar
+7fc547160000-7fc547161000 r--s 00005000 08:08 9971453                    /home/souvik/COMSOL43/plugins/com.comsol.loader_1.0.0.jar
+7fc547161000-7fc547163000 r--s 001d2000 08:08 9971479                    /home/souvik/COMSOL43/plugins/com.comsol.plasma_1.0.0.jar
+7fc547163000-7fc547164000 r--s 0000b000 08:08 9971474                    /home/souvik/COMSOL43/plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar
+7fc547164000-7fc54716c000 rw-s 00000000 08:07 915781                     /tmp/hsperfdata_souvik/29135
+7fc54716c000-7fc54716d000 rw-p 00000000 00:00 0 
+7fc54716d000-7fc54716e000 r--p 00000000 00:00 0 
+7fc54716e000-7fc547170000 r-xp 00000000 08:08 13241622                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjsig.so
+7fc547170000-7fc54726f000 ---p 00002000 08:08 13241622                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjsig.so
+7fc54726f000-7fc547270000 rw-p 00001000 08:08 13241622                   /home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjsig.so
+7fc547270000-7fc547273000 rw-p 00000000 00:00 0 
+7fc547273000-7fc547274000 r--p 00022000 08:07 3270643                    /lib/x86_64-linux-gnu/ld-2.15.so
+7fc547274000-7fc547276000 rw-p 00023000 08:07 3270643                    /lib/x86_64-linux-gnu/ld-2.15.so
+7fff8c5f3000-7fff8c5f6000 ---p 00000000 00:00 0 
+7fff8c5f7000-7fff8c7f3000 rwxp 00000000 00:00 0                          [stack]
+7fff8c7f3000-7fff8c7f5000 rw-p 00000000 00:00 0 
+7fff8c7ff000-7fff8c800000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dosgi.splashPath=platform:/base/plugins/com.comsol.util/ -Dosgi.clean=true -Dosgi.configuration.cascaded=true -Dosgi.checkConfiguration=true -Dosgi.sharedConfiguration.area=file:configuration/comsol -Dosgi.sharedConfiguration.area.readOnly=true -Dosgi.configuration.area=@user.home/.comsol/v43/configuration/comsol -Dosgi.instance.area=@user.home/.comsol/v43/workspace/comsol -Dcs.logoutput=file -Dcs.logfileprefix=comsol -Dcs.client=true -Xss4m -Xms40m -Xmx1024m -XX:MaxPermSize=256m 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=/home/souvik/matlab/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/souvik/matlab/bin:/home/souvik/COMSOL43/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
+LD_LIBRARY_PATH=/home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/server:/home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64:/home/souvik/matlab/bin/glnxa64:/home/souvik/COMSOL43/ext/cadimport/glnxa64:/home/souvik/COMSOL43/lib/glnxa64/ipv4:/home/souvik/COMSOL43/lib/glnxa64
+LD_PRELOAD=/home/souvik/COMSOL43/java/glnxa64/jre/lib/amd64/libjsig.so
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x70ffd0], sa_mask[0]=0x7fffffff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x70ffd0], sa_mask[0]=0x7fffffff, sa_flags=0x10000004
+SIGFPE: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGXFSZ: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGILL: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5db510], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5db260], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:wheezy/sid
+
+uname:Linux 3.2.0-53-generic #81-Ubuntu SMP Thu Aug 22 21:01:03 UTC 2013 x86_64
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 46532, NOFILE 4096, AS infinity
+load average:1.98 1.24 1.11
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 5973828k(328392k free), swap 5996540k(5718920k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (16.3-b01) for linux-amd64 JRE (1.6.0_20-b02), built on Apr 12 2010 13:57:11 by "java_re" with gcc 3.2.2 (SuSE Linux)
+
+time: Fri Oct 25 14:18:47 2013
+elapsed time: 23 seconds
+

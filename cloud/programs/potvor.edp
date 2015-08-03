@@ -1,0 +1,99 @@
+// Optical flow problem using FEM assuming potential flow.
+
+border aa(t=0,1){x=t;   y=0; label = 1;}
+border bb(t=0,1){x=1;   y=t;label = 1;}
+border cc(t=0,1){x=1-t; y=1;label = 1;}
+border dd(t=0,1){x=0;   y=1-t;label = 1;}
+
+int np = 50;
+mesh Th = buildmesh( aa(np) + bb(np) + cc(np) + dd(np) );
+plot(Th,value = true,cmm ="Mesh",ps="Mesh.edp");
+
+real str=1.0;
+real PI = 3.1415926535897932;
+// Exact velocity
+func ue = -str*(y+1)/(2*PI*((x+1)^2+(y+1)^2));
+func ve = str*(x+1)/(2*PI*((x+1)^2+(y+1)^2));
+real t  = 0;
+// Image and its derivatives
+real coef = 50;
+real xc = 0.5, yc = 0.5;
+func E = exp(-coef*((x-xc)^2 + (y-yc)^2));
+func Ex= -2*coef*(x-xc)*E;
+func Ey= -2*coef*(y-yc)*E;
+func Et=  -Ex*ue-Ey*ve;
+
+fespace eh(Th,P1);
+fespace Wh(Th,P1);
+fespace Vh(Th,P1);
+
+// Just for visualization
+eh Eh=E;
+plot(Eh,value =true,cmm="Image",ps="Image.edp");
+
+// Solution
+Vh phi,u,v;
+// Test function
+Vh phih;
+// Lagrange Multiplier
+Wh psi, psih;
+
+// Regularization parameter
+real alpha=1.1;
+
+// Starting with an initial value of g.
+func g = 0.0;
+Vh gh = g;
+
+real L2error = 1.0;
+
+
+real tol = 1e-9;
+
+int n = 1;
+real epsilon = 0.0000000001;
+
+// Starting the iterations using the L2 error for succesive approximations of g.
+
+while(L2error >tol && n < 100000){
+
+cout << n<<endl;
+
+// Weak formulation for phi.
+
+solve PHI(phi,phih,solver = CG) =
+int2d(Th)(dx(phi)*dx(phih)+dy(phi)*dy(phih))+
+int2d(Th)(epsilon*phi*phih)-
+int1d(Th)(gh * phih);
+
+plot(phi, fill=1, value=1);
+
+// Weak formulation for psi
+solve PSI(psi,psih,solver = CG)=
+int2d(Th)(dx(psi)*dx(psih)+dy(psi)*dy(psih))-
+int2d(Th)((dx(phi)*Ex + dy(phi)*Ey)*(dx(psih)*Ex + dy(psih)*Ey))-
+int2d(Th)(Et*(dx(psih)*Ex + dy(psih)*Ey));
+
+plot(psi);
+
+real lambda = int1d(Th)(psi) / int1d(Th)(1.0);
+Vh gmod = (-psi+lambda)/(alpha);
+L2error = sqrt(int1d(Th)((gh-gmod)^2));
+
+cout<<L2error<<endl;
+
+n++;
+
+gh = gmod;
+plot(gh, fill=1, value=1);
+
+u=dx(phi);
+v=dy(phi);
+real VL2err = int2d(Th)( (u-ue)^2 + (v-ve)^2 );
+VL2err = sqrt(VL2err)/sqrt(int2d(Th)(ue^2+ve^2));
+cout << "L2 error in velocity = " << VL2err << endl;
+}
+real VL2err = int2d(Th)( (u-ue)^2 + (v-ve)^2 );
+VL2err = sqrt(VL2err)/sqrt(int2d(Th)(ue^2+ve^2));
+cout << "L2 error in velocity = " << VL2err << endl;
+plot(Eh,[u,v],wait=1, value = true,cmm="Velocity vectors",ps="velvor.eps");

@@ -1,0 +1,84 @@
+ EXEC of the plot  : ffglut.exe
+-- FreeFem++ v  3.170000 (date Wed Nov 16 15:29:29 GMT 2011)
+ Load: lg_fem lg_mesh lg_mesh3 eigenvalue
+    1 : // Optical flow problem using FEM
+    2 : // Author: Praveen. C <http://math.tifrbng.res.in/~praveen>
+    3 : // Unit square
+    4 : border aa(t=0,1){x=t;   y=0;}
+    5 : border bb(t=0,1){x=1;   y=t;}
+    6 : border cc(t=0,1){x=1-t; y=1;}
+    7 : border dd(t=0,1){x=0;   y=1-t;}
+    8 :
+    9 : int np = 20;
+   10 : mesh Th = buildmesh( aa(np) + bb(np) + cc(np) + dd(np) );
+   11 : plot(Th, wait=1);
+   12 :
+   13 : // Exact velocity
+   14 : func ue = y;
+   15 : func ve = -x;
+   16 : real t  = 0;
+   17 : // Image and its derivatives
+   18 : real coef = 50;
+   19 : real xc = 0.5, yc = 0.5;
+   20 : func E = exp(-coef*((x-xc)^2 + (y-yc)^2));
+   21 : func Ex= -2*coef*(x-xc)*E;
+   22 : func Ey= -2*coef*(y-yc)*E;
+   23 : func Et= -(Ex*ue+Ey*ve);
+   24 :
+   25 : fespace Vh(Th,P1);
+   26 : fespace Wh(Th,P1);
+   27 :
+   28 : // Just for visualization
+   29 : Vh Eh=E;
+   30 : plot(Eh, wait=1);
+   31 :
+   32 : // Solution
+   33 : Vh u, v;
+   34 : // Test function
+   35 : Vh uh, vh;
+   36 : // Lagrange Multiplier
+   37 : Wh lambda, lambdah;
+   38 : // Regularization parameter
+   39 : real alpha=0.1;
+   40 :
+   41 : // Weak formulation of the problem
+   42 : problem OpticalFlow([u,v,lambda],[uh,vh,lambdah],solver=LU) =
+   43 : int2d(Th)( alpha^2 * (dx(u)*dx(uh) + dy(u)*dy(uh) +
+   44 :                       dx(v)*dx(vh) + dy(v)*dy(vh) )) -
+   45 : int2d(Th)( (u*Ex + v*Ey)*(uh*Ex + vh*Ey) ) -
+   46 : int2d(Th)( Et*(uh*Ex + vh*Ey) )-
+   47 : int2d(Th)((dx(uh)+dy(vh))*lambda)-
+   48 : int2d(Th)((dx(u)+dy(v))*lambdah)-
+   49 : int2d(Th)(1e-10*lambda*lambdah)+
+   50 : on(1, u=ue, v=ve);
+   51 :
+   52 : // solve the problem
+   53 : OpticalFlow;
+   54 :
+   55 : // Compute L2 error in velocity
+   56 : real err = int2d(Th)( (u-ue)^2 + (v-ve)^2 );
+   57 : err = sqrt(err);
+   58 : cout << "L2 error in velocity = " << err << endl;
+   59 :
+   60 : // Plot velocity
+   61 : plot(Eh,[u,v],wait=1,cmm="Velocity vectors",ps="vel.eps");
+   62 :
+   63 : Vh uerror = u - ue;
+   64 : Vh verror = v - ve;
+   65 : plot(uerror,wait=1,value=1,fill=1,cmm="Error in u");
+   66 : plot(verror,wait=1,value=1,fill=1,cmm="Error in v");
+   67 :
+   68 : Vh aerror = Et + u*Ex + v*Ey;
+   69 : plot(aerror,wait=1,value=1,fill=1,cmm="Error in advection");
+   70 :  sizestack + 1024 =6392  ( 5368 )
+ 
+  --  mesh:  Nb of Triangles =    952, Nb of Vertices 517
+  -- Solve :
+          min -0.0367444  max 0.781506
+          min -1  max -1.91427e-033
+          min -0.208945  max 0.213328
+L2 error in velocity = 0.410079
+times: compile 0.085s, execution 4.458s,  mpirank:0
+ CodeAlloc : nb ptr  2720,  size :163980 mpirank: 0
+Bien: On a fini Normalement
+ try getConsole C:\Users\admin\Desktop\programs\stokes1.edp

@@ -1,0 +1,96 @@
+ EXEC of the plot  : ffglut.exe
+-- FreeFem++ v  3.170000 (date Wed Nov 16 15:29:29 GMT 2011)
+ Load: lg_fem lg_mesh lg_mesh3 eigenvalue
+    1 : // Optical flow problem using FEM
+    2 :
+    3 : border aa(t=0,1){x=t;   y=0; label = 1;}
+    4 : border bb(t=0,1){x=1;   y=t;label = 1;}
+    5 : border cc(t=0,1){x=1-t; y=1;label = 1;}
+    6 : border dd(t=0,1){x=0;   y=1-t;label = 1;}
+    7 :
+    8 : int np = 20;
+    9 : mesh Th = buildmesh( aa(np) + bb(np) + cc(np) + dd(np) );
+   10 : plot(Th, wait=1);
+   11 :
+   12 : // Exact velocity
+   13 : func ue = 1.0;
+   14 : func ve = 1.0;
+   15 : real t  = 0;
+   16 : // Image and its derivatives
+   17 : real coef = 50;
+   18 : real xc = 0, yc = 0;
+   19 : func E = exp((x-ue*t)^2+(y-ve*t)^2);
+   20 : func Ex= E*2*(x-ue*t);
+   21 : func Ey= E*2*(y-ve*t);
+   22 : func Et= E*(-2*ue*(x-ue*t)-2*ve*(y-ve*t));
+   23 : fespace eh(Th,P1);
+   24 : fespace Wh(Th,P1);
+   25 : fespace Vh(Th,P1);
+   26 :
+   27 : // Just for visualization
+   28 : eh Eh=E;
+   29 : plot(Eh, wait=1);
+   30 :
+   31 : // Solution
+   32 : Vh phi;
+   33 : // Test function
+   34 : Vh phih;
+   35 : // Lagrange Multiplier
+   36 : Wh psi, psih;
+   37 : Wh u, v, uh;
+   38 :
+   39 : // Regularization parameter
+   40 : real alpha=0.0001;
+   41 :
+   42 : // Weak formulation
+   43 : solve opticalflow([phi,psi],[phih,psih],solver=LU)
+   44 : =
+   45 :   int2d(Th)(dx(psi)*dx(psih)+dy(psi)*dy(psih))
+   46 : - int2d(Th)((dx(phi)*Ex + dy(phi)*Ey)*(dx(psih)*Ex + dy(psih)*Ey))
+   47 : + int2d(Th)(dx(phi)*dx(phih)+dy(phi)*dy(phih))
+   48 : + int1d(Th)(psi * phih/(alpha^2))
+   49 : - int2d(Th)(Et*(dx(psih)*Ex + dy(psih)*Ey));
+   50 :
+   51 : // compute x component velocity
+   52 : solve uvel(u,uh)
+   53 : =
+   54 :   int2d(Th)(u*uh)
+   55 : + int2d(Th)(phi*dx(uh))
+   56 : - int1d(Th)(phi*uh*N.x);
+   57 :
+   58 : // compute y component velocity
+   59 : solve vvel(v,uh)
+   60 : =
+   61 :   int2d(Th)(v*uh)
+   62 : + int2d(Th)(phi*dy(uh))
+   63 : - int1d(Th)(phi*uh*N.y);
+   64 :
+   65 :
+   66 :
+   67 : real L2error = sqrt(int2d(Th)((u-ue)^2)+(v-ve)^2);
+   68 :
+   69 :
+   70 : real L2norm = sqrt(int2d(Th)(ue^2+ve^2));
+   71 :
+   72 : cout << "L2 Error is:" << L2error/L2norm <<endl;
+   73 :
+   74 :
+   75 : // plot velocity vectors
+   76 : plot([u,v],wait=1);
+   77 :
+   78 :
+   79 :  sizestack + 1024 =5584  ( 4560 )
+ 
+  --  mesh:  Nb of Triangles =    952, Nb of Vertices 517
+  -- Solve :
+          min -2.00848  max -0.00847755
+          min -1.26795e-008  max 1.81543e-008
+  -- Solve :
+          min 1  max 1
+  -- Solve :
+          min 1  max 1
+L2 Error is:8.55639e-009
+times: compile 0.088s, execution 1.299s,  mpirank:0
+ CodeAlloc : nb ptr  2751,  size :165524 mpirank: 0
+Bien: On a fini Normalement
+ try getConsole C:\Users\admin\Desktop\potof4.edp

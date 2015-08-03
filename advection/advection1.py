@@ -1,0 +1,91 @@
+from dolfin import *
+np = 100
+
+mesh = UnitSquare(np, np)
+h = CellSize(mesh)
+
+
+# Create FunctionSpaces
+Q = FunctionSpace(mesh, "CG", 1)
+
+# Parameters
+T = 5
+dt = 0.01
+t = 0.1
+uinit  = Expression("exp(-100*(pow((x[0]-0.5),2.0) + \
+                pow((x[1]-0.5),2.0)))")
+
+# Boundaries
+def bdry(x, on_boundary): return on_boundary
+
+def bottom(x, on_boundary): return x[1] < DOLFIN_EPS and on_boundary
+def top(x, on_boundary): return x[1] > 1 - DOLFIN_EPS and on_boundary
+def left(x, on_boundary): return x[0] < DOLFIN_EPS and on_boundary
+def right(x, on_boundary): return x[0] > 1-DOLFIN_EPS and on_boundary
+
+velocity = Expression(("0.3","0.3"))
+g = Constant((0.0))
+
+bc_bot = DirichletBC(Q, g, bottom)
+bc_top = DirichletBC(Q,g, top)
+bc_left = DirichletBC(Q, g, left)
+bc_right = DirichletBC(Q, g, right)
+
+
+
+# Initialise source function and previous solution function
+f  = Constant(0.0)
+u0 = Function(Q)
+u = interpolate(uinit, Q)
+plot(u)
+interactive()
+
+
+
+
+# Test and trial functions
+v, w = TrialFunction(Q), TestFunction(Q)
+
+# Mid-point solution
+u_mid = 0.5*(u0 + v)
+
+# Residual
+r = v-u0 + dt*(dot(velocity, grad(u_mid)) - f)
+
+
+# Galerkin variational problem
+F = w*(v-u0)*dx + dt*(w*dot(velocity, grad(u_mid))*dx )
+
+# Add SUPG stabilisation terms
+vnorm = sqrt(dot(velocity, velocity))
+F += (h/2.0*vnorm)*dot(velocity, grad(w))*r*dx
+
+
+# Create bilinear and linear forms
+a = lhs(F)
+L = rhs(F)
+
+# Set up boundary condition
+bc = [bc_bot, bc_top, bc_left, bc_right]
+
+# Output file
+out_file = File("temperature.pvd")
+
+# Time-stepping
+while t < T:
+    
+    u0.assign(u)
+    solve( a==L, u, bc)
+    
+    #plot(u)
+    #interactive()
+    # Save the solution to file
+    out_file << (u, t)
+
+    # Move to next interval and adjust boundary condition
+    t += dt
+   
+# Hold plot
+#interactive()
+
+

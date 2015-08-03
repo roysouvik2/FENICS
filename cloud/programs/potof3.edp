@@ -1,0 +1,78 @@
+// Optical flow problem using FEM
+
+border aa(t=0,1){x=t;   y=0; label = 1;}
+border bb(t=0,1){x=1;   y=t;label = 1;}
+border cc(t=0,1){x=1-t; y=1;label = 1;}
+border dd(t=0,1){x=0;   y=1-t;label = 1;}
+
+int np = 20;
+mesh Th = buildmesh( aa(np) + bb(np) + cc(np) + dd(np) );
+plot(Th, wait=1);
+
+// Exact velocity
+func ue = 1.0;
+func ve = 1.0;
+real t  = 0;
+// Image and its derivatives
+real coef = 50;
+real xc = 0, yc = 0;
+func E = sin(x-ue*t-xc)*sin(y-ve*t-yc);
+func Et= cos(x-ue*t-xc)*(-ue)*sin(y-ve*t-yc)+
+         cos(y-ve*t-yc)*(-ve)*sin(x-ue*t-xc);
+func Ex= cos(x-ue*t-xc)*sin(y-ve*t-yc);
+func Ey= sin(x-ue*t-xc)*cos(y-ve*t-yc);
+fespace eh(Th,P1);
+fespace Wh(Th,P1);
+fespace Vh(Th,P1);
+
+// Just for visualization
+eh Eh=E;
+plot(Eh, wait=1);
+
+// Solution
+Vh phi;
+// Test function
+Vh phih;
+// Lagrange Multiplier
+Wh psi, psih;
+Wh u, v, uh;
+
+// Regularization parameter
+real alpha=0.0001;
+
+// Weak formulation 
+solve opticalflow([phi,psi],[phih,psih],solver=LU) 
+=
+  int2d(Th)(dx(psi)*dx(psih)+dy(psi)*dy(psih))
+- int2d(Th)((dx(phi)*Ex + dy(phi)*Ey)*(dx(psih)*Ex + dy(psih)*Ey))
++ int2d(Th)(dx(phi)*dx(phih)+dy(phi)*dy(phih))
++ int1d(Th)(psi * phih/(alpha^2))
+- int2d(Th)(Et*(dx(psih)*Ex + dy(psih)*Ey));
+
+// compute x component velocity
+solve uvel(u,uh) 
+=
+  int2d(Th)(u*uh)
++ int2d(Th)(phi*dx(uh))
+- int1d(Th)(phi*uh*N.x);
+
+// compute y component velocity
+solve vvel(v,uh) 
+=
+  int2d(Th)(v*uh)
++ int2d(Th)(phi*dy(uh))
+- int1d(Th)(phi*uh*N.y);
+
+
+
+real L2error = sqrt(int2d(Th)((u-ue)^2)+(v-ve)^2);
+
+
+real L2norm = sqrt(int2d(Th)(ue^2+ve^2));
+
+cout << "L2 Error is:" << L2error/L2norm <<endl;
+
+
+// plot velocity vectors
+plot([u,v],wait=1);
+
